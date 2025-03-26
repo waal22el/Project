@@ -2,8 +2,8 @@
 Our project is going to be a math quiz game 
 
 # Team Members - GitHub Handles
-Alma Warin - waal22el
-Yannick Wayan Winkler - 
+Alma Warin - waal22el,
+Yannick Wayan Winkler - itsyannick03, 
 Fadumo Jama -
 
 # Declaration
