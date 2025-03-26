@@ -16,3 +16,7 @@ I, Fadumo Jama, declare that I am the sole author of the content I add to this r
 # Plan
 We are going to use the languages C# and Unity
 
+# Kanban Board
+
+
+
