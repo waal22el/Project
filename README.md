@@ -6,6 +6,8 @@ The combat is turn based, where the player can make three types of attacks light
 The player moves around the dungeon when they run into a mob a combat encounter is started. The player has a health bar and tries to kill the mobs in order to collect items into their inventory. 
 # Mobs 
 The mobs walk around the doungeon randomly and drop items when they are killed. There are several types of mobs with different themes.
+# Shop
+The player will be able to earn coins and buy items.
 
 
 # Team Members - GitHub Handles
