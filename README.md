@@ -11,7 +11,7 @@ The player will be able to earn coins and buy items.
 
 
 # Team Members - GitHub Handles
-Alma Warin - waal22el,
+Alma Warin - waal22el, 
 Yannick Wayan Winkler - itsyannick03, 
 Fadumo Jama - Fadde1,
 Claes Svensson - svcl23fy
