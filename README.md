@@ -19,10 +19,6 @@ Claes Svensson - svcl23fy
 # Declaration
 I, Alma Warin, declare that I am the sole author of the content I add to this repository.
 
-I, Yannick Wayan Winkler, declare that I am the sole author of the content I add to this repository,
-
-I, Fadumo Jama, declare that I am the sole author of the content I add to this repository.
-
 I, Claes Svensson, declare that I am the sole author of the content I add to this repository.
 
 # Plan
