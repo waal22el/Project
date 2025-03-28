@@ -11,7 +11,7 @@ The mobs walk around the doungeon randomly and drop items when they are killed. 
 # Team Members - GitHub Handles
 Alma Warin - waal22el,
 Yannick Wayan Winkler - itsyannick03, 
-Fadumo Jama -
+Fadumo Jama - Fadde1
 
 # Declaration
 I, Alma Warin, declare that I am the sole author of the content I add to this repository.
