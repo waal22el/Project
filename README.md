@@ -28,4 +28,7 @@ We are going to use the C# language and Unity
 # Kanban Board
 https://github.com/users/waal22el/projects/4
 
+# Compilation and Running instructions
+Start Unity and click play
+
 
