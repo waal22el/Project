@@ -28,6 +28,5 @@ We are going to use the C# language and Unity
 # Kanban Board
 https://github.com/users/waal22el/projects/4
 
-
 # Compilation and Running instructions
-Start Unity and click play
+Start Unity Hub, click "Add" then "Add project from disk" and select the local repo if it's not been added before, install the project's editor version if necessary, start the project and click play. Different scenes can be selected to inspect the progress of various parts.
