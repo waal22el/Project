@@ -30,3 +30,6 @@ https://github.com/users/waal22el/projects/4
 
 # Compilation and Running instructions
 Start Unity Hub, click "Add" then "Add project from disk" and select the local repo if it's not been added before, install the project's editor version if necessary, start the project and click play. Different scenes can be selected to inspect the progress of various parts.
+
+# Running Instructions For Unit Test
+Start the project, click on window then general and klick on test runner. Click on play mode and the test you want to run, then press run selected tests.
