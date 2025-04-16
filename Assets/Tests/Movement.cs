@@ -15,10 +15,7 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    public Transform playerTransform;
-    public bool isChasing;
-    public float chaseDistance;
-    public float moveSpeed;
+    public bool isChasing = false;
 
     void Start()
     {
@@ -29,35 +26,27 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0)
+        if (!isChasing)
         {
-            PickNewDirection();
-            timeLeft = directionChange;
-        }
-        if(isChasing)
-        {
-            if(transform.position.x > playerTransform.position.x)
+            timeLeft -= Time.deltaTime;
+            if (timeLeft <= 0)
             {
-                transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-            }
-            if (transform.position.x < playerTransform.position.x)
-            {
-                transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            }
-        }
-        else
-        {
-            if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
-            {
-                isChasing = true;
+                PickNewDirection();
+                timeLeft = directionChange;
             }
         }
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = movement * maxSpeed;
+        if (!isChasing)
+        {
+            rb.linearVelocity = movement * maxSpeed;
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     void PickNewDirection()
