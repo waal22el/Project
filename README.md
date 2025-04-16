@@ -33,3 +33,7 @@ Start Unity Hub, click "Add" then "Add project from disk" and select the local r
 
 # Running Instructions For Unit Test
 Start the project, click on window then general and klick on test runner. Click on play mode and the test you want to run, then press run selected tests.
+
+# Assets
+Pixel crawler - Free pack
+
