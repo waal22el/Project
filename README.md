@@ -32,7 +32,8 @@ https://github.com/users/waal22el/projects/4
 Start Unity Hub, click "Add" then "Add project from disk" and select the local repo if it's not been added before, install the project's editor version if necessary, start the project and click play. Different scenes can be selected to inspect the progress of various parts.
 
 # Running Instructions For Unit Test
-Start the project, click on window then general and klick on test runner. Click on play mode and the test you want to run, then press run selected tests.
+Start the project, click on window then general and klick on test runner. Click on play mode and the test you want to run, then press run selected tests. You can also run the tests by typing in the commands Unity.exe -runTests -batchmode -projectPath PATH_TO_YOUR_PROJECT -testResults C:\temp\results.xml -testPlatform PS4, this will also include the code coverage for the tests. 
+
 
 # Assets
 Pixel crawler - Free pack
