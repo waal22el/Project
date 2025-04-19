@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewScript : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int MoveUpwards = 0;
