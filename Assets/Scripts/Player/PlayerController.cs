@@ -4,13 +4,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 0;
-
+    public int maxHealth = 10;
+    public HealthBar healthBar;
+    
+    private int currentHealth;
     private Vector2 input = Vector2.zero;
     private bool moving = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        currentHealth = maxHealth;
+        healthBar.SetMaxHP(maxHealth);
     }
 
     // Update is called once per frame
@@ -28,6 +32,10 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Move(targetPos));
             }
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(1); //Testing damage
+        }
     }
 
     IEnumerator Move(Vector3 targetPos)// Moves the player over time
@@ -42,5 +50,21 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         moving = false;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHP(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void Heal(int healing)
+    {
+        currentHealth = Mathf.Min(currentHealth + healing, maxHealth);
+        healthBar.SetHP(currentHealth);
     }
 }
