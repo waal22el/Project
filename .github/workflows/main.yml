@@ -24,9 +24,9 @@ jobs:
       working-directory: ./
 
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build Tests.csproj --no-restore --configuration Release
       working-directory: . # Replace 'src' with the directory containing your .csproj or .sln file
 
     - name: Run tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test Tests.csproj --no-build --verbosity normal
       working-directory: . # Replace 'src' with the directory containing your test projects
