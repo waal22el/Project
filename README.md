@@ -38,3 +38,7 @@ Start the project, click on window then general and klick on test runner. Click 
 # Assets
 Pixel crawler - Free pack
 
+# CI badge
+![.NET CI](https://github.com/waal22el/Project/actions/workflows/CI.yml/badge.svg)
+
+
