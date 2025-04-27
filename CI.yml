@@ -1,0 +1,32 @@
+name: .NET CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x' # Specify the .NET version you are using
+
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: . # Replace '.' with the folder containing `Tests.csproj`
+
+    - name: Build
+      run: dotnet build --no-restore --configuration Release
+      working-directory: . # Replace '.' with the folder containing `Tests.csproj`
+
+    - name: Run tests
+      run: dotnet test --no-build --verbosity normal
+      working-directory: . # Replace '.' with the folder containing `Tests.csproj`
