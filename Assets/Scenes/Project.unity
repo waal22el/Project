@@ -525,6 +525,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78e6fc69d38a64418ed544585fe0196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 7
+  damage: 2
 --- !u!50 &494445135
 Rigidbody2D:
   serializedVersion: 5
@@ -1806,7 +1808,6 @@ GameObject:
   - component: {fileID: 1393683734}
   - component: {fileID: 1393683733}
   - component: {fileID: 1393683732}
-  - component: {fileID: 1393683731}
   - component: {fileID: 1393683730}
   - component: {fileID: 1393683739}
   m_Layer: 0
@@ -1832,20 +1833,6 @@ MonoBehaviour:
   chaseDistance: 2
   moveSpeed: 2
   chaseDuration: 8
---- !u!114 &1393683731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393683729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c87adb032a10e24ea194772dd1a3dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 4
-  playerHealth: {fileID: 1610975459}
 --- !u!58 &1393683732
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2070,6 +2057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 494445132}
+  fireRate: 1
+  shootingRange: 5
 --- !u!1 &1536235627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,7 +2802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c87adb032a10e24ea194772dd1a3dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   playerHealth: {fileID: 1610975459}
 --- !u!58 &2009537262
 CircleCollider2D:
