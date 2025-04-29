@@ -1,0 +1,235 @@
+[33mcommit 33c6a329e7934a8a6905adef01b322a766503306[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdungeons[m[33m, [m[1;31morigin/dungeons[m[33m)[m
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Apr 21 14:34:34 2025 +0200
+
+    Added simple wall generation
+
+[33mcommit fdfc2b319551837d0098c89b214ff77c9f08c720[m
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Mon Apr 21 13:59:31 2025 +0200
+
+    Added Presets and the ability to save dungeon data
+
+[33mcommit bb06681aebd6f0901178505cbe2c2f144d4d1a55[m
+Author: ItsaYannick <jaxterlp@gmail.com>
+Date:   Thu Apr 17 16:22:27 2025 +0200
+
+    Added simple Tilemapping to dungeon generator
+
+[33mcommit 4cc2dd43bb1e816372b56b75d0f4d595fc23a212[m
+Author: ItsaYannick <jaxterlp@gmail.com>
+Date:   Wed Apr 16 19:46:52 2025 +0200
+
+    Dungeon generator v 0.0.1
+
+[33mcommit b86d47c87e6f28ef111ad834ebb82941c3b26652[m
+Author: ItsaYannick <jaxterlp@gmail.com>
+Date:   Fri Apr 11 20:15:58 2025 +0200
+
+    Dungeon generation update
+
+[33mcommit 32ee4b5495bb41a7df4540b29646a6936924fabd[m
+Merge: 01e55a5 13df2e7
+Author: Santa <svcl23fy@student.ju.se>
+Date:   Fri Apr 11 15:32:20 2025 +0200
+
+    Merge pull request #30 from waal22el/Claes
+    
+    close #26 close #24 close #25 Merge conflict readme
+
+[33mcommit 13df2e7870fd5fce52ec8609829a9bae517116eb[m[33m ([m[1;31morigin/Claes[m[33m)[m
+Merge: c27be79 01e55a5
+Author: Santa <svcl23fy@student.ju.se>
+Date:   Fri Apr 11 15:27:15 2025 +0200
+
+    Merge branch 'main' into Claes
+
+[33mcommit c27be79a692221ab979df1dc21fbd42df37c241a[m
+Author: Claes Svensson <svcl23fy@student.ju.se>
+Date:   Fri Apr 11 15:22:05 2025 +0200
+
+    Merge conflict readme
+
+[33mcommit 01e55a5c6c18e0950fce35ddff5752720482f568[m
+Author: Santa <svcl23fy@student.ju.se>
+Date:   Fri Apr 11 15:07:41 2025 +0200
+
+    Update README.md
+
+[33mcommit eed5771e98e87cbcd7f609fb311924475eb2e830[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 2243804 6497544
+Author: Santa <svcl23fy@student.ju.se>
+Date:   Wed Apr 9 21:17:47 2025 +0200
+
+    Merge pull request #29 from waal22el/Claes
+    
+    Player placeholder with movement over background closes #5 Movment
+
+[33mcommit 6497544e2f91bbc95d37e1d4f314ab8f6a38db19[m
+Author: Claes Svensson <svcl23fy@student.ju.se>
+Date:   Wed Apr 9 21:11:55 2025 +0200
+
+    Player placeholder with movement over background
+
+[33mcommit 2243804bacb0a06c3d7074155828d2292af3e02b[m
+Author: Alma Warin <waal22elstudent.ju.se>
+Date:   Wed Apr 9 20:27:36 2025 +0200
+
+    Added random movement
+
+[33mcommit 78673e6b3fc139c9055eb50b157285adb49362b1[m[33m ([m[1;31morigin/Combat[m[33m)[m
+Author: ItsaYannick <jaxterlp@gmail.com>
+Date:   Mon Apr 7 18:23:15 2025 +0200
+
+    init2
+
+[33mcommit 5c75c1801f064f8a0dfab00e98e6358b855d6fbd[m
+Author: ItsaYannick <jaxterlp@gmail.com>
+Date:   Mon Apr 7 17:49:03 2025 +0200
+
+    init
+
+[33mcommit da93a8aaae1b813c507fbb6958c4adb72d6079aa[m
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Mon Apr 7 17:32:00 2025 +0200
+
+    Update .gitignore
+
+[33mcommit 53a738ed24701826ebaec2a2184ff2f8fc7070d6[m[33m ([m[1;31morigin/Alma[m[33m)[m
+Merge: dffbd18 fda1c0e
+Author: Santa <svcl23fy@student.ju.se>
+Date:   Thu Apr 3 20:15:35 2025 +0200
+
+    Merge pull request #27 from waal22el/Claes
+    
+    resolves #23 (this) and resolves #20 Added .gitignore
+
+[33mcommit fda1c0ee3c2b78d56f65024445d15bea4c8a1223[m
+Author: Claes Svensson <svcl23fy@student.ju.se>
+Date:   Thu Apr 3 19:45:49 2025 +0200
+
+    Issue #20 Added .gitignore
+
+[33mcommit dffbd18c3372187aa71fad08fb42a1140c874b9c[m
+Author: Fadde1 <jafa22my@student.ju.se>
+Date:   Fri Mar 28 15:25:46 2025 +0100
+
+    Update README.md
+    
+    added declaration
+
+[33mcommit 72b3f15ce6824e74fdd6df5fffd7e9b82be04e7b[m
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Fri Mar 28 15:24:29 2025 +0100
+
+    Update README.md
+
+[33mcommit c59976f08caea8803963c9130c4d42ad3d3e540e[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Mar 28 15:22:37 2025 +0100
+
+    Update README.md
+
+[33mcommit 6bac23be87501e7947537fdc21ecc0efa680d119[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Mar 28 15:16:34 2025 +0100
+
+    Update README.md
+
+[33mcommit a304e467d3150b41dea093160962a0627ad62364[m
+Author: Santa <svcl23fy@student.ju.se>
+Date:   Fri Mar 28 14:54:37 2025 +0100
+
+    Update README.md
+    
+    Grammar fix
+
+[33mcommit ce886d26ea2c7427ab6f114c8770d34d43fd7e3f[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Mar 28 14:30:07 2025 +0100
+
+    Update README.md
+
+[33mcommit 42913069fb23496f8d54118a7b62a316f4b0982b[m
+Author: Santa <claes2000@outlook.com>
+Date:   Fri Mar 28 14:24:39 2025 +0100
+
+    Update README.md
+    
+    Added declaration
+
+[33mcommit 26075a3849a983e7910cfc15786abd85689c05bd[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Mar 28 14:21:18 2025 +0100
+
+    Update README.md
+
+[33mcommit a909d4efe1ee1e485c83296798a6ebf7689252e8[m[33m ([m[1;31morigin/Boss[m[33m)[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Fri Mar 28 13:57:09 2025 +0100
+
+    Update README.md
+
+[33mcommit d6c4ad7c7ee390891e64c1ad0dc239ac3b9dba9f[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Mar 26 14:21:29 2025 +0100
+
+    Update README.md
+
+[33mcommit c0bbdda55fd4eddf2e2db262b8bbb2548bcf3970[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Mar 26 13:22:32 2025 +0100
+
+    Update README.md
+
+[33mcommit e957ded1c98d8f6aeba186bdf38a8acba2de9955[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Mar 26 13:21:04 2025 +0100
+
+    Update README.md
+
+[33mcommit d1d47110d8a4cef9edc559f2d767041abfd969f8[m
+Merge: a499caf 17a9c83
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Mar 26 13:16:18 2025 +0100
+
+    Merge branch 'main' of github.com:waal22el/Project
+
+[33mcommit a499cafceeccbb0b8a4d2ccf421b8de565618d68[m
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Mar 26 13:14:23 2025 +0100
+
+    I removed the idk.c file
+
+[33mcommit 17a9c8370485d60063ef100f9b7b6ff7a2e3c66c[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Mar 26 13:13:18 2025 +0100
+
+    Update README.md
+
+[33mcommit eb0737b23e55bd3de457a02e2f1b2540804d0c83[m
+Merge: f59a1b9 4ec9d5c
+Author: Itsayannick03 <yannickwinkler3@gmail.com>
+Date:   Wed Mar 26 13:06:10 2025 +0100
+
+    Merge pull request #2 from Itsayannick03/yannick
+    
+    I added a c file
+
+[33mcommit 4ec9d5c0e740db5cec27cfa70cd134df066ee1c6[m
+Author: Yannick Winkler <yannickwinkler3@gmail.com>
+Date:   Wed Mar 26 13:03:27 2025 +0100
+
+    I added a c file
+
+[33mcommit f59a1b98994954b9eb7da29aa0cd6f9c850a2861[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Mar 26 12:38:08 2025 +0100
+
+    Update README.md
+
+[33mcommit 67d932e7a49b3ffc8bff89dd063b9907a314b6fc[m
+Author: waal22el <158295274+waal22el@users.noreply.github.com>
+Date:   Wed Mar 26 11:57:04 2025 +0100
+
+    Initial commit
