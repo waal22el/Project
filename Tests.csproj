@@ -71,6 +71,7 @@
     <Compile Include="Assets\Tests\PlayerHealth.cs" />
     <Compile Include="Assets\Tests\MonsterDamage.cs" />
     <Compile Include="Assets\Tests\ShootArrows.cs" />
+    <Compile Include="Assets\Tests\PlayerAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Tests\Tests.asmdef" />

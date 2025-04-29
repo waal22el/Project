@@ -3,43 +3,56 @@ using UnityEngine;
 public class Bullets : MonoBehaviour
 {
     public float moveSpeed = 7f;
-    public int damage = 1;  // Public damage variable you can adjust
+    public int damage = 2;
     private Rigidbody2D rb;
-    private Transform target;
+    private Vector2 direction;
+    private GameObject shooter;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-
-        if (playerObj != null)
-        {
-            target = playerObj.transform;
-            Vector2 moveDirection = (target.position - transform.position).normalized;
-            rb.linearVelocity = moveDirection * moveSpeed;
-        }
-        else
-        {
-            Debug.LogWarning("Player not found!");
-        }
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        direction = player != null ?
+                   (player.transform.position - transform.position).normalized :
+                   Vector2.right;
 
         Destroy(gameObject, 7f);
     }
+
+    void FixedUpdate()
+    {
+        if (rb != null)
+        {
+            rb.velocity = direction * moveSpeed; // fixed: use velocity, not linearVelocity
+        }
+    }
+
+    public void SetShooter(GameObject shooterObj)
+    {
+        shooter = shooterObj;
+
+        Collider2D bulletCollider = GetComponent<Collider2D>();
+        Collider2D[] shooterColliders = shooterObj.GetComponentsInChildren<Collider2D>();
+
+        if (bulletCollider != null)
+        {
+            foreach (var shooterCollider in shooterColliders)
+            {
+                if (shooterCollider != null)
+                    Physics2D.IgnoreCollision(bulletCollider, shooterCollider);
+            }
+        }
+    }
+
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = col.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);  // Apply dynamic damage
-            }
-
+            col.GetComponent<PlayerHealth>()?.TakeDamage(damage);
             Destroy(gameObject);
         }
     }
-
 }
 
 

@@ -3,20 +3,32 @@ using UnityEngine.UI;
 
 public class MonsterDamage : MonoBehaviour
 {
-
-    public float health;
-    public float maxHealth;
+    public float health = 100f;
+    public float maxHealth = 100f;
     public Image healthBar;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         maxHealth = health;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1); 
+        healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject); 
     }
 }
