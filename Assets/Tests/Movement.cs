@@ -1,11 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Low coupling supports few dependencies which makes it easy to test and make changes.
-// This code has low dependency which is why it uses the low coupling pattern.
-// High cohesion means that the code sticks toghether and does one thing well.
-// This code has the same purpose and therefore it has high cohesion. 
 public class Movement : MonoBehaviour
 {
     public float directionChange = 3f;
@@ -14,12 +10,15 @@ public class Movement : MonoBehaviour
     private float timeLeft;
 
     private Rigidbody2D rb;
+    private Animator animator;
 
     public bool isChasing = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();  // ✅ Get the Animator component
+
         PickNewDirection();
         timeLeft = directionChange;
     }
@@ -35,17 +34,26 @@ public class Movement : MonoBehaviour
                 timeLeft = directionChange;
             }
         }
+
+        // ✅ Update animator with current speed
+        animator.SetFloat("Speed", movement.magnitude);
+        // Flip the sprite based on movement direction
+        if (movement.x != 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = movement.x < 0;
+        }
+
     }
 
     void FixedUpdate()
     {
         if (!isChasing)
         {
-            rb.linearVelocity = movement * maxSpeed;
+            rb.velocity = movement * maxSpeed;  // ✅ Corrected from linearVelocity
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
         }
     }
 
@@ -54,4 +62,5 @@ public class Movement : MonoBehaviour
         movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 }
+
 
