@@ -10,6 +10,7 @@ public class MonsterDamage : MonoBehaviour
 
     public GameObject deathEffect;  // Optional: Assign particle effect or dead prefab
 
+    public GameObject[] itemDrops;
     void Start()
     {
         maxHealth = health;
@@ -19,6 +20,7 @@ public class MonsterDamage : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
+        
     }
 
     public void TakeDamage(float damageAmount)
@@ -28,6 +30,7 @@ public class MonsterDamage : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            ItemDrop();
         }
     }
 
@@ -55,4 +58,14 @@ public class MonsterDamage : MonoBehaviour
         // Destroy the monster after a delay, allowing death animation/effects to play
         Destroy(gameObject, 1f);  // Adjust the delay to match your animation length
     }
+
+    private void ItemDrop()
+    {
+        if (itemDrops.Length > 0)
+        {
+            int index = Random.Range(0, itemDrops.Length);  // Choose one at random
+            Instantiate(itemDrops[index], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        }
+    }
+
 }

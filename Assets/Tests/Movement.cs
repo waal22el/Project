@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();  // ✅ Get the Animator component
+        animator = GetComponent<Animator>();  
 
         PickNewDirection();
         timeLeft = directionChange;
@@ -35,9 +35,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        // ✅ Update animator with current speed
         animator.SetFloat("Speed", movement.magnitude);
-        // Flip the sprite based on movement direction
         if (movement.x != 0)
         {
             GetComponent<SpriteRenderer>().flipX = movement.x < 0;
@@ -49,7 +47,7 @@ public class Movement : MonoBehaviour
     {
         if (!isChasing)
         {
-            rb.velocity = movement * maxSpeed;  // ✅ Corrected from linearVelocity
+            rb.velocity = movement * maxSpeed;  
         }
         else
         {

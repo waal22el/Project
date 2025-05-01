@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ShootArrows : MonoBehaviour
 {
@@ -7,38 +8,58 @@ public class ShootArrows : MonoBehaviour
     public float shootingRange = 5f;
     public float bulletSpeed = 7f;
     public int bulletDamage = 2;
+    public int poolSize = 10;
 
-    private float fireTimer;
     private Transform player;
+    private float nextShotTime;
+    private Queue<GameObject> bulletPool;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        InitializePool();
+        nextShotTime = Time.time;
     }
 
     void Update()
     {
         if (player == null) return;
 
-        fireTimer += Time.deltaTime;
-
-        if (Vector2.Distance(transform.position, player.position) <= shootingRange &&
-            fireTimer >= fireRate)
+        if (Vector3.Distance(transform.position, player.position) <= shootingRange)
         {
-            Shoot();
-            fireTimer = 0f;
+            if (Time.time >= nextShotTime)
+            {
+                Shoot();
+                nextShotTime = Time.time + fireRate;
+            }
+        }
+    }
+
+    void InitializePool()
+    {
+        bulletPool = new Queue<GameObject>();
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab);
+            bullet.SetActive(false);
+            bulletPool.Enqueue(bullet);
         }
     }
 
     void Shoot()
     {
-        Vector2 spawnPos = transform.position + (player.position - transform.position).normalized * 0.5f;
-        var bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
-        var bulletScript = bullet.GetComponent<Bullets>();
+        if (bulletPool.Count == 0) return;
+
+        GameObject bullet = bulletPool.Dequeue();
+        bullet.transform.position = transform.position +
+                                  (player.position - transform.position).normalized * 0.5f;
+        bullet.SetActive(true);
+
+        Bullets bulletScript = bullet.GetComponent<Bullets>();
         bulletScript.moveSpeed = bulletSpeed;
         bulletScript.damage = bulletDamage;
         bulletScript.SetShooter(gameObject);
+        bulletScript.OnDestroyed += () => bulletPool.Enqueue(bullet);
     }
-
 }
 
