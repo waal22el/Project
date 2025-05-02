@@ -6,9 +6,9 @@ public class MonsterDamage : MonoBehaviour
     public float health = 100f;
     public float maxHealth = 100f;
     public Image healthBar;
-    private Animator animator;  // To trigger death animation
+    private Animator animator;  
 
-    public GameObject deathEffect;  // Optional: Assign particle effect or dead prefab
+    public GameObject deathEffect;  
 
     public GameObject[] itemDrops;
 
@@ -16,7 +16,7 @@ public class MonsterDamage : MonoBehaviour
     void Start()
     {
         maxHealth = health;
-        animator = GetComponent<Animator>();  // Get the Animator component
+        animator = GetComponent<Animator>(); 
     }
 
     void Update()
@@ -39,36 +39,43 @@ public class MonsterDamage : MonoBehaviour
 
     void Die()
     {
-        // Play death animation by triggering it
         if (animator != null)
         {
-            animator.SetTrigger("Die");  // Assuming you have a "Die" trigger in the Animator
+            animator.SetTrigger("Die");  
         }
 
-        // Optional: Instantiate a death effect (e.g., particle effect, explosion)
         if (deathEffect != null)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 2f); 
         }
 
-        // Optionally, disable movement or other behavior
-        var movementScript = GetComponent<Movement>();  // Assuming your monster has a Movement script
+
+        var movementScript = GetComponent<Movement>(); 
         if (movementScript != null)
         {
-            movementScript.enabled = false;  // Disable movement when the monster dies
+            movementScript.enabled = false;  
         }
 
-        // Destroy the monster after a delay, allowing death animation/effects to play
-        Destroy(gameObject, 1f);  // Adjust the delay to match your animation length
+        Destroy(gameObject, 1f); 
+
     }
 
     private void ItemDrop()
     {
         if (itemDrops.Length > 0)
         {
-            int index = Random.Range(0, itemDrops.Length);  // Choose one at random
-            Instantiate(itemDrops[index], transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            int index = Random.Range(0, itemDrops.Length);
+            GameObject item = Instantiate(itemDrops[index], transform.position, Quaternion.identity);
+
+            if (item.TryGetComponent<Rigidbody2D>(out var rb2D))
+            {
+                rb2D.gravityScale = 0;
+                rb2D.velocity = Vector2.zero;
+                rb2D.angularVelocity = 0;
+                rb2D.bodyType = RigidbodyType2D.Kinematic; 
+            }
+
         }
     }
-
 }
