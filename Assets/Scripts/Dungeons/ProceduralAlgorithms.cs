@@ -26,8 +26,6 @@ public static class ProceduralAlgorithms
  
 
     public static List<Vector2Int> RandomWalkCorridor(Vector2Int startPosition, int corridorLength)
- 
-
     {
  
 

@@ -6,8 +6,7 @@ using System.Collections;
  
 
 using System.Collections.Generic;
- 
-
+using System.Linq;
 using UnityEngine;
  
 
@@ -34,11 +33,6 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
 
     private float roomPercent = 0.8f;
  
-
-    [SerializeField]
- 
-
-    public SimpleRandomData roomGenerationParameters;
  
 
 
@@ -66,15 +60,19 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
  
 
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
+        HashSet<Vector2Int> potentialRoomPositions = new HashSet<Vector2Int>();
+
  
 
 
  
 
-        CreateCorridors(floorPositions);
+        CreateCorridors(floorPositions, potentialRoomPositions);
+
+        HashSet<Vector2Int> roomPositions = CreateRooms(potentialRoomPositions);
  
 
-
+        floorPositions.UnionWith(roomPositions);
  
 
         tilemapVisulizer.PaintFloorTiles(floorPositions);
@@ -87,26 +85,32 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
  
 
     }
- 
 
+    private HashSet<Vector2Int> CreateRooms(HashSet<Vector2Int> potentialRoomPositions)
+    {
+        HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
+        int roomCreateCount = Mathf.RoundToInt( potentialRoomPositions.Count * roomPercent);
 
- 
+        List<Vector2Int> roomsToCreate = potentialRoomPositions.OrderBy(x => Guid.NewGuid()).Take(roomCreateCount).ToList();
 
-    private void CreateCorridors(HashSet<Vector2Int> floorPositions)
+        foreach (var roomPosition in roomsToCreate)
+        {
+            var roomFloor = RunRandomWalk(randomWalkParameters, roomPosition); 
+            roomPositions.UnionWith(roomFloor);
+        }
+        return roomPositions;
+    }
+
+    private void CreateCorridors(HashSet<Vector2Int> floorPositions,HashSet<Vector2Int> potentialRoomPositions )
  
 
     {
  
 
         var currentPosition = startPosition;
- 
-
-
- 
+        potentialRoomPositions.Add(currentPosition);
 
         for (int i = 0; i < corridorCount; i++)
- 
-
         {
  
 
@@ -114,6 +118,7 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
  
 
             currentPosition = corridor[corridor.Count - 1];
+            potentialRoomPositions.Add(currentPosition);
  
 
             floorPositions.UnionWith(corridor);
