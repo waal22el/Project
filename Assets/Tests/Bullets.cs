@@ -12,6 +12,17 @@ public class Bullets : MonoBehaviour
 
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
+    void Update()
+    {
+        Vector2 velocity = rb.velocity;
+
+        if (velocity.sqrMagnitude > 0.01f)
+        {
+            float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
+
     void OnEnable()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");

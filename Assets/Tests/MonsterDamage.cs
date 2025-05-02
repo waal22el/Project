@@ -11,6 +11,8 @@ public class MonsterDamage : MonoBehaviour
     public GameObject deathEffect;  // Optional: Assign particle effect or dead prefab
 
     public GameObject[] itemDrops;
+
+    private bool hasDied = false;
     void Start()
     {
         maxHealth = health;
@@ -27,10 +29,11 @@ public class MonsterDamage : MonoBehaviour
     {
         health -= damageAmount;
 
-        if (health <= 0)
+        if (health <= 0 && hasDied == false)
         {
             Die();
             ItemDrop();
+            hasDied = true;
         }
     }
 
