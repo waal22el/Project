@@ -26,15 +26,15 @@ jobs:
             Library-${{ runner.os }}-
 
       - name: Setup Unity
-        uses: game-ci/unity-actions/setup@v2
+        uses: game-ci/unity-actions/setup@v2.0.0
         with:
-          unityVersion: '2022.3.10f1' 
+          unityVersion: '2022.3.10f1'
 
-      - name: Run Unity tests
-        uses: game-ci/unity-actions/test@v2
+      - name: Run Unity EditMode Tests
+        uses: game-ci/unity-actions/test@v2.0.0
         with:
           projectPath: ./
-          testMode: EditMode 
+          testMode: EditMode
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
@@ -44,4 +44,5 @@ jobs:
         with:
           name: Test results
           path: ./TestResults
+
 
