@@ -1,26 +1,4 @@
-name: Unity CI
 
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-
-jobs:
-  build:
-    name: Build Unity Project
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build project
-        uses: game-ci/unity-builder@v2
-        with:
-          unityVersion: 2022.3.10f1 
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 
 
