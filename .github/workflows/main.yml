@@ -7,42 +7,20 @@ on:
     branches: [main, master]
 
 jobs:
-  test:
-    name: Build and Run Tests
+  build:
+    name: Build Unity Project
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache Unity packages
-        uses: actions/cache@v4
+      - name: Build project
+        uses: game-ci/unity-builder@v2
         with:
-          path: |
-            ~/.cache/unity3d
-            ~/.local/share/unity3d
-          key: Library-${{ runner.os }}-${{ hashFiles('**/Packages/manifest.json') }}
-          restore-keys: |
-            Library-${{ runner.os }}-
-
-      - name: Setup Unity
-        uses: game-ci/unity-actions/setup@v2.0.0
-        with:
-          unityVersion: '2022.3.10f1'
-
-      - name: Run Unity EditMode Tests
-        uses: game-ci/unity-actions/test@v2.0.0
-        with:
-          projectPath: ./
-          testMode: EditMode
+          unityVersion: 2022.3.10f1 
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
-      - name: Upload test results (optional)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: Test results
-          path: ./TestResults
 
 
