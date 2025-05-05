@@ -11,7 +11,7 @@ public class BulletBehavior : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed; // Kulan flyger åt höger från sin rotation
+        rb.linearVelocity = transform.right * speed; // Kulan flyger åt höger från sin rotation
         Destroy(gameObject, lifetime);         // Förstör kulan efter X sekunder
     }
 
@@ -20,10 +20,10 @@ public class BulletBehavior : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Skadar spelaren om den har ett hälsoscript
-            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            BossPlayerHealth playerHealth = collision.GetComponent<BossPlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damage);
+               playerHealth.TakeDamage(damage);
                 Debug.Log("Hit!"); // 👉 Lägger till "Hit!" i konsolen
             }
             Destroy(gameObject); // Kulan förstörs vid träff
