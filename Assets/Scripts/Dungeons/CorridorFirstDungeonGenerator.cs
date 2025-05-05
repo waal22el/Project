@@ -7,11 +7,13 @@ using System.Collections;
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using UnityEngine;
- 
+using static ProceduralAlgorithms;
 
 
- 
+
+
 
 public class CorridorFirstDungeonGenerator : DungeonGenerator
  
@@ -70,6 +72,10 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
         CreateCorridors(floorPositions, potentialRoomPositions);
 
         HashSet<Vector2Int> roomPositions = CreateRooms(potentialRoomPositions);
+
+        List<Vector2Int> deadEnds = FindAllDeadEnds(floorPositions);
+
+        CreateRoomsAtDeadEnd(deadEnds, roomPositions);
  
 
         floorPositions.UnionWith(roomPositions);
@@ -86,13 +92,44 @@ public class CorridorFirstDungeonGenerator : DungeonGenerator
 
     }
 
+    private void CreateRoomsAtDeadEnd(List<Vector2Int> deadEnds, HashSet<Vector2Int> roomFloors)
+    {
+        foreach (var position in deadEnds)
+        {
+            if(!roomFloors.Contains(position)) 
+            {
+                var room = RunRandomWalk(randomWalkParameters, position);
+                roomFloors.UnionWith(room);
+            }
+
+        }
+    }
+
+    private List<Vector2Int> FindAllDeadEnds(HashSet<Vector2Int> floorPositions)
+    {
+        List<Vector2Int> deadEnds = new List<Vector2Int>();
+        foreach (var position in floorPositions)
+        {
+            int neighboursCount = 0;
+            foreach (var direction in Direction2D.cardinalDirectionsList)
+            {
+                if(floorPositions.Contains(position + direction))
+                    neighboursCount++;
+            }
+            if(neighboursCount == 1)
+                deadEnds.Add(position);
+        }
+        return deadEnds;
+    }
+
     private HashSet<Vector2Int> CreateRooms(HashSet<Vector2Int> potentialRoomPositions)
     {
         HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
-        int roomCreateCount = Mathf.RoundToInt( potentialRoomPositions.Count * roomPercent);
+        int roomCreateCount = Mathf.RoundToInt( potentialRoomPositions.Count * roomPercent); //Defining how many rooms to create rounded to a integer
 
         List<Vector2Int> roomsToCreate = potentialRoomPositions.OrderBy(x => Guid.NewGuid()).Take(roomCreateCount).ToList();
 
+        //Looping through each potential room position in list and creating a room there
         foreach (var roomPosition in roomsToCreate)
         {
             var roomFloor = RunRandomWalk(randomWalkParameters, roomPosition); 
