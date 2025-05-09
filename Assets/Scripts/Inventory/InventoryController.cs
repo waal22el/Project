@@ -12,6 +12,8 @@ public class InventoryController : MonoBehaviour
     void Start()
     {
         currentSlot = hotbarSlots[0];
+        currentHotbarSlot = 0;
+        HotbarItemChange();
     }
 
     // Update is called once per frame
@@ -23,11 +25,25 @@ public class InventoryController : MonoBehaviour
         {
             UseItem();
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PickUpTest();
+        }
+    }
+
+    void PickUpTest()
+    {
+        GameObject.FindFirstObjectByType<Item>().PickUp();
+    }
+
+    public bool AddItem(ItemSO itemSO)
+    {
+        return currentSlot.GetComponent<InventoryItem>().Add(itemSO);
     }
 
     private void UseItem()
     {
-        Instantiate(currentSlot.GetComponent<InventoryItem>().itemSO.prefab);
+        currentSlot.GetComponent<InventoryItem>().Use();
     }
 
     private void HotbarInput()
