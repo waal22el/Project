@@ -2,28 +2,48 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    public GameObject bullet; // Prefab som bossen skjuter
+    public GameObject bullet;
     public float fireRate = 1f;
+    public float shootingDistance = 1f;
+
     protected float nextFire;
-    public float shootingDistance = 10f;
     protected Transform player;
+    private BossPatrol patrolScript;
 
     protected virtual void Start()
     {
-        nextFire = Time.time;
         player = GameObject.FindWithTag("Player").transform;
+        nextFire = Time.time;
+        patrolScript = GetComponent<BossPatrol>();
+
     }
 
     protected virtual void Update()
     {
-        CheckIfTimeToFire();
+        float distance = Vector2.Distance(transform.position, player.position);
+
+        if (distance <= shootingDistance)
+        {
+            // Stoppa patrullering n�r spelaren �r n�ra
+            if (patrolScript != null)
+                patrolScript.enabled = false;
+
+            CheckIfTimeToFire();
+        }
+        else
+        {
+            // �teraktivera patrull om spelaren �r l�ngt bort
+            if (patrolScript != null)
+                patrolScript.enabled = true;
+        }
+
     }
 
     protected void CheckIfTimeToFire()
     {
-        float distance = Vector2.Distance(transform.position, player.position);
 
-        if (distance <= shootingDistance && Time.time > nextFire)
+        if (Time.time >= nextFire)
+
         {
             Attack();
             nextFire = Time.time + fireRate;
@@ -32,10 +52,9 @@ public class BossAttack : MonoBehaviour
 
     protected virtual void Attack()
     {
-        // Grundattack (kan vara tom eller skjuta en standardkula)
+
+
         Instantiate(bullet, transform.position, Quaternion.identity);
     }
 }
-
-
 
