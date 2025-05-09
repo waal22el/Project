@@ -2,15 +2,18 @@
 
 public class BulletBehavior : MonoBehaviour
 {
+
     public float speed = 5f;
     public int damage = 1;
     public float lifetime = 3f;
+
 
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
 
         // Hitta spelaren och skjut mot hens position
         GameObject player = GameObject.FindWithTag("Player");
@@ -21,12 +24,14 @@ public class BulletBehavior : MonoBehaviour
         }
 
         Destroy(gameObject, lifetime);
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+
             BossPlayerHealth playerHealth = collision.GetComponent<BossPlayerHealth>();
             if (playerHealth != null)
             {
@@ -35,6 +40,7 @@ public class BulletBehavior : MonoBehaviour
             }
 
             Destroy(gameObject);
+
         }
     }
 }
