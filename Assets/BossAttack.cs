@@ -15,6 +15,7 @@ public class BossAttack : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         nextFire = Time.time;
         patrolScript = GetComponent<BossPatrol>();
+
     }
 
     protected virtual void Update()
@@ -23,7 +24,7 @@ public class BossAttack : MonoBehaviour
 
         if (distance <= shootingDistance)
         {
-            // Stoppa patrullering när spelaren är nära
+            // Stoppa patrullering nï¿½r spelaren ï¿½r nï¿½ra
             if (patrolScript != null)
                 patrolScript.enabled = false;
 
@@ -31,15 +32,18 @@ public class BossAttack : MonoBehaviour
         }
         else
         {
-            // Återaktivera patrull om spelaren är långt bort
+            // ï¿½teraktivera patrull om spelaren ï¿½r lï¿½ngt bort
             if (patrolScript != null)
                 patrolScript.enabled = true;
         }
+
     }
 
     protected void CheckIfTimeToFire()
     {
+
         if (Time.time >= nextFire)
+
         {
             Attack();
             nextFire = Time.time + fireRate;
@@ -48,6 +52,8 @@ public class BossAttack : MonoBehaviour
 
     protected virtual void Attack()
     {
+
+
         Instantiate(bullet, transform.position, Quaternion.identity);
     }
 }
