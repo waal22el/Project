@@ -144,7 +144,7 @@ namespace PixelArtCamera
             cam.targetTexture = null;
 
             // Copies source texture into destination render texture using submitted material
-            Graphics.Blit(_rt, null, _material);
+            //Graphics.Blit(_rt, null, _material);
 
             // Release the RenderTexture
             _rt.Release();
