@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+
+    public float speed = 5f;
+
     float xInput;
     float yInput;
     Rigidbody2D rb;
@@ -19,7 +22,13 @@ public class movement : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        rb.linearVelocity = new Vector2(xInput, yInput) * speed;
+    }
+}
+
         rb.AddForce(new Vector2(xInput, yInput));
     }
 }
+
 
