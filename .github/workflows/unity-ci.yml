@@ -14,17 +14,20 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Unity License
-        run: echo "${{ secrets.UNITY_LICENSE_FILE }}" > /github/workspace/Unity_lic.ulf
+        run: |
+          mkdir -p /tmp/unity
+          echo "${{ secrets.UNITY_LICENSE_FILE }}" > /tmp/unity/Unity_lic.ulf
 
       - name: Run Unity Test Runner
         uses: game-ci/unity-test-runner@v3
         with:
-          UNITY_LICENSE_FILE: /github/workspace/Unity_lic.ulf
+          UNITY_LICENSE_FILE: /tmp/unity/Unity_lic.ulf
           UNITY_VERSION: 2021.3.0f1
           PROJECT_PATH: .
           TEST_PLATFORMS: editmode
         env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_FILE }}
+          UNITY_LICENSE: /tmp/unity/Unity_lic.ulf
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+
 
