@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a2cfa25684bd9d548bea5a2cec5d2c37
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195748
+  packageName: PixelArtCamera
+  packageVersion: 0.1
+  assetPath: Assets/PixelArtCamera/Example/Tilemap/Kenney.prefab
+  uploadId: 434618
