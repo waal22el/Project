@@ -1,0 +1,40 @@
+name: Unity CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache Unity
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/unity
+          key: ${{ runner.os }}-unity
+
+      - name: Set up Unity
+        uses: game-ci/unity-installer@v3
+        with:
+          unityVersion: 2021.3.0f1 
+
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v3
+        with:
+          unityVersion: 2021.3.0f1
+          testMode: EditMode
+          projectPath: ./
+          artifactsPath: test-results
+          
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: Test Results
+          path: test-results
