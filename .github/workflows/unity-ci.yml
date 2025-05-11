@@ -1,37 +1,30 @@
-name: Unity CI
+name: Run Unity Tests
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Build and Test
+  unity:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Cache Unity
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/unity
-          key: ${{ runner.os }}-unity
+      - name: Setup Unity License
+        run: echo "${{ secrets.UNITY_LICENSE_FILE }}" > /github/workspace/Unity_lic.ulf
 
-      
-
-      - name: Run tests
+      - name: Run Unity Test Runner
         uses: game-ci/unity-test-runner@v3
         with:
-          unityVersion: 2021.3.0f1
-          testMode: EditMode
-          projectPath: ./
-          artifactsPath: test-results
-          
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: Test Results
-          path: test-results
+          UNITY_LICENSE_FILE: /github/workspace/Unity_lic.ulf
+          UNITY_VERSION: 2021.3.0f1
+          PROJECT_PATH: .
+          TEST_PLATFORMS: editmode
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_FILE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+
