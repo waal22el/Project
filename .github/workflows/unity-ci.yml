@@ -21,13 +21,15 @@ jobs:
       - name: Run Unity Test Runner
         uses: game-ci/unity-test-runner@v3
         with:
-          UNITY_LICENSE_FILE: /tmp/unity/Unity_lic.ulf
-          UNITY_VERSION: 2021.3.0f1
-          PROJECT_PATH: .
-          TEST_PLATFORMS: editmode
+          unityVersion: 2021.3.0f1
+          projectPath: .
+          testMode: playmode;editmode
+          coverageOptions: generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;dontClear
+          artifactsPath: artifacts
         env:
           UNITY_LICENSE: /tmp/unity/Unity_lic.ulf
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+
 
 
