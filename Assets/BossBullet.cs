@@ -7,8 +7,11 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private int damage = 1;
     [SerializeField] private float lifetime = 3f;
-    [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject fireObject;
+
+    private GameObject player;
+
+    private Rigidbody2D rb;
     private float time = 0f;
 
     void Start()
@@ -18,7 +21,7 @@ public class BulletBehavior : MonoBehaviour
 
 
         // Hitta spelaren och skjut mot hens position
-        GameObject player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         if (player != null)
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
@@ -47,10 +50,9 @@ public class BulletBehavior : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
-                Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y,0), quaternion.identity);
                 Debug.Log("Hit!");
             }
-
+            Instantiate(fireObject, new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z), quaternion.identity);
             Destroy(gameObject);
 
         }
