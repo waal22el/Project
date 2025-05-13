@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark-dungeon-long-medieval-castle-600nw-2118070751_0: -3742781307389966152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
