@@ -27,8 +27,8 @@ public class movement : MonoBehaviour
     }
 }
 
-        rb.AddForce(new Vector2(xInput, yInput));
-    }
-}
+       // rb.AddForce(new Vector2(xInput, yInput));
+    
+
 
 

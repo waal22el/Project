@@ -178,3 +178,5 @@ MonoBehaviour:
   speed: 5
   damage: 1
   lifetime: 3
+  rb: {fileID: 0}
+  fireObject: {fileID: 6414094554983558170, guid: 8c5151a567da574f083bd178340ed85c, type: 3}
