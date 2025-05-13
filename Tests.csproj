@@ -61,11 +61,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Tests\NewTestScript.cs" />
     <Compile Include="Assets\Tests\Movement.cs" />
     <Compile Include="Assets\Tests\MonsterChasing.cs" />
     <Compile Include="Assets\Tests\Bullets.cs" />
     <Compile Include="Assets\Tests\Movment2.cs" />
+    <Compile Include="Assets\Tests\MonsterDamageTests.cs" />
     <Compile Include="Assets\Tests\MainMenu.cs" />
     <Compile Include="Assets\Tests\MonsterSpawner.cs" />
     <Compile Include="Assets\Tests\GameOver.cs" />
