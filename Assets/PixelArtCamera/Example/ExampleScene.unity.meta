@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 85db213251d8c614ea9ef5738405214c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195748
+  packageName: PixelArtCamera
+  packageVersion: 0.1
+  assetPath: Assets/PixelArtCamera/Example/ExampleScene.unity
+  uploadId: 434618

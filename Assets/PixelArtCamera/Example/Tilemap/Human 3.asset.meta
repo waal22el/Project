@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 071c0b4e32b62fc4b8dc635219fef0f7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195748
+  packageName: PixelArtCamera
+  packageVersion: 0.1
+  assetPath: Assets/PixelArtCamera/Example/Tilemap/Human 3.asset
+  uploadId: 434618

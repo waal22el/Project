@@ -7,4 +7,9 @@ public class ItemSO : ScriptableObject
     public GameObject prefab;
     public int maxStacks;
     public bool permanent = false;
+
+    public virtual void Use()
+    {
+
+    }
 }

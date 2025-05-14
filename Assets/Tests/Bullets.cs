@@ -23,7 +23,7 @@ public class Bullets : MonoBehaviour
         }
     }
 
-    void OnEnable()
+    public void OnEnable()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Vector2 direction = player != null ?
