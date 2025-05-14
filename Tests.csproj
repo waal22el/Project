@@ -67,9 +67,13 @@
   <ItemGroup>
     <Compile Include="Assets/Tests/NewTestScript.cs" />
     <Compile Include="Assets/Tests/Movement.cs" />
+    <Compile Include="Assets/Tests/BossAttack.cs" />
+    <Compile Include="Assets/Tests/BossHealth.cs" />
+    <Compile Include="Assets/Tests/BossPlayerHealth.cs" />
     <Compile Include="Assets/Tests/MonsterChasing.cs" />
     <Compile Include="Assets/Tests/Bullets.cs" />
     <Compile Include="Assets/Tests/Movment2.cs" />
+    <Compile Include="Assets/Tests/BossHealthbar.cs" />
     <Compile Include="Assets/Tests/MainMenu.cs" />
     <Compile Include="Assets/Tests/MonsterSpawner.cs" />
     <Compile Include="Assets/Tests/GameOver.cs" />
@@ -79,6 +83,10 @@
     <Compile Include="Assets/Tests/MonsterDamage.cs" />
     <Compile Include="Assets/Tests/Items.cs" />
     <Compile Include="Assets/Tests/ShootArrows.cs" />
+    <Compile Include="Assets/Tests/BossPatrol.cs" />
+    <Compile Include="Assets/Tests/FireBossAttack.cs" />
+    <Compile Include="Assets/Tests/BossBullet.cs" />
+    <Compile Include="Assets/Tests/BossSpawner.cs" />
     <Compile Include="Assets/Tests/PlayerAttack.cs" />
   </ItemGroup>
   <ItemGroup>
