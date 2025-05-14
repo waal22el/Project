@@ -17,7 +17,7 @@ jobs:
       
       # 3. Run Unity tests (Edit Mode + Play Mode)
       - name: Run Tests
-        uses: game-ci/unity-test-runner@v2
+        uses: game-ci/unity-test-setup@v2
         with:
           testMode: all              # Runs EditMode + PlayMode tests
       
