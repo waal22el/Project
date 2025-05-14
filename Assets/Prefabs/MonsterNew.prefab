@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e527f68d7c5b54e88eff0acea1357d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 3233619659759006293, guid: 4ccd17dcb7923dd44a6b2352928de842, type: 3}
   chaseDistance: 2
   moveSpeed: 3
   chaseDuration: 7
