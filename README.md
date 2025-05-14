@@ -39,6 +39,6 @@ Start the project, click on window then general and klick on test runner. Click 
 Pixel crawler - Free pack
 
 # CI badge
-![Ci status](https://github.com/waal22el/Project/actions/runs/15028231542)
+![Ci status](https://github.com/waal22el/Project/actions/runs/15028231542/workflow)
 
 
