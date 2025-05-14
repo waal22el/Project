@@ -75,6 +75,7 @@
     <Compile Include="Assets\Tests\Items.cs" />
     <Compile Include="Assets\Tests\Spawner.cs" />
     <Compile Include="Assets\Tests\ShootArrows.cs" />
+    <Compile Include="Assets\Tests\PostBossMenuUI.cs" />
     <Compile Include="Assets\Tests\PlayerAttack.cs" />
   </ItemGroup>
   <ItemGroup>
