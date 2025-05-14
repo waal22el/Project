@@ -1,4 +1,38 @@
+name: Unity CI
 
+on: [push, pull_request]  # Triggers
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Or windows-latest/macos-latest
+    steps:
+      # 1. Checkout code
+      - uses: actions/checkout@v4
+      
+      # 2. Set up Unity (license + dependencies)
+      - name: Setup Unity
+        uses: game-ci/unity-setup@v2
+        with:
+          unity-version: 2022.3.11f1  # Your Unity version
+      
+      # 3. Run Unity tests (Edit Mode + Play Mode)
+      - name: Run Tests
+        uses: game-ci/unity-test-runner@v2
+        with:
+          testMode: all              # Runs EditMode + PlayMode tests
+      
+      # 4. Build the project (e.g., for WebGL)
+      - name: Build WebGL
+        uses: game-ci/unity-builder@v2
+        with:
+          targetPlatform: WebGL      # Change to your desired platform
+      
+      # 5. Optional: Upload Build Artifacts
+      - name: Upload Build
+        uses: actions/upload-artifact@v3
+        with:
+          name: Build
+          path: project/.github/workflow             # Adjust path to your actual build directory
 
 
 
