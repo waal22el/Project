@@ -1,23 +1,27 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentHealth;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
+            // Ladda meny-scenen direkt efter bossen dör
+            SceneManager.LoadScene("MenuPostBossFight"); 
+
+            // Förstör bossen 
             Destroy(gameObject);
         }
-
     }
 }
+
