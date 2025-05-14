@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      meteorite-or-fire-ball-illustration-png_0: -4088470153075526137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
