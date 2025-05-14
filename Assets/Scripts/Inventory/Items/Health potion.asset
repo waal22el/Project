@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe69874a760c9e4c8f8525aa64e8ce5, type: 3}
-  m_Name: Health potion
+  m_Script: {fileID: 11500000, guid: 49ba86b66df52eb4890c606fdb3b37f7, type: 3}
+  m_Name: Health Potion
   m_EditorClassIdentifier: 
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  prefab: {fileID: 1619883263891215614, guid: 9f47f9ee2a1b44048a7278150224534f, type: 3}
-  maxStacks: 5
+  icon: {fileID: 2398268216345953637, guid: 27a051490feceec40bebece8b6541a9c, type: 3}
+  prefab: {fileID: 2951135984635660986, guid: fe80b2bc5c1096844a06dc3a1cdbe2fd, type: 3}
+  maxStacks: 0
   permanent: 0
+  healing: 5
