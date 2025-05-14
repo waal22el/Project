@@ -41,4 +41,6 @@ Pixel crawler - Free pack
 # CI badge
 ![Ci status](https://github.com/waal22el/Project/actions/runs/15028231542/workflow)
 
+# Linter
+Type in either dotnet-format --check or dotnet-format in the console
 
