@@ -13,12 +13,12 @@ public class BossAttack : MonoBehaviour
     protected virtual void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        nextFire = Time.time;
+        nextFire = Time.time + fireRate;
         patrolScript = GetComponent<BossPatrol>();
 
     }
 
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
         float distance = Vector2.Distance(transform.position, player.position);
 
@@ -47,6 +47,9 @@ public class BossAttack : MonoBehaviour
         {
             Attack();
             nextFire = Time.time + fireRate;
+            Debug.Log("current time = " + Time.time);
+            Debug.Log("nextFire = " + nextFire);
+            Debug.Log("Delta Time = " + (nextFire - Time.time));
         }
     }
 
