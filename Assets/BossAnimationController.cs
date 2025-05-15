@@ -3,23 +3,27 @@ using UnityEngine;
 public class BossAnimationController : MonoBehaviour
 {
     private Animator animator;
+    private Rigidbody2D rb;
 
-    // Dessa variabler styr animationerna – kan göras public för att testa i Inspector
-    public bool isDead = false;
-    public bool isRunning = false;
+    public int maxHealth = 100;
+    public int currentHealth;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
-        if (isDead)
+        if (currentHealth <= 0)
         {
-            animator.SetTrigger("Death");
+            animator.SetBool("isDead", true);
+            return;
         }
-        else if (isRunning)
+
+        if (rb.linearVelocity.magnitude > 0.1f)
         {
             animator.SetBool("isRunning", true);
         }
@@ -28,6 +32,25 @@ public class BossAnimationController : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        animator.SetTrigger("isDead");
+        StartCoroutine(RemoveAfterDeath());
+    }
+
+    private System.Collections.IEnumerator RemoveAfterDeath()
+    {
+        yield return new WaitForSeconds(1.0f); //  efter Death-animationen
+        Destroy(gameObject);
+    }
 }
-
-
