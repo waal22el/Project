@@ -1,30 +1,44 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
 
-    public float speed = 5f;
-    public int damage = 1;
-    public float lifetime = 3f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private int damage = 1;
+    [SerializeField] private float lifetime = 3f;
+    [SerializeField] private GameObject fireObject;
 
+    private GameObject player;
 
     private Rigidbody2D rb;
+    private float time = 0f;
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
 
 
         // Hitta spelaren och skjut mot hens position
-        GameObject player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         if (player != null)
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
         }
 
-        Destroy(gameObject, lifetime);
+    }
 
+    void FixedUpdate()
+    {
+        time += Time.deltaTime;
+
+        if(time >= lifetime)
+        {
+            Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y,0), quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -32,15 +46,20 @@ public class BulletBehavior : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            BossPlayerHealth playerHealth = collision.GetComponent<BossPlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-                Debug.Log("Hit!");
-            }
-
+            PlayerHealth plyr = collision.GetComponent<PlayerHealth>();
+            DealDamage(damage, plyr);
+            Instantiate(fireObject, new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z), quaternion.identity);
             Destroy(gameObject);
 
+        }
+    }
+
+    void DealDamage(int dmg, PlayerHealth player) 
+    {
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+            Debug.Log(damage + " damage dealt to player");
         }
     }
 }
