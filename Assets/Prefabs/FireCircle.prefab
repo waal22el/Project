@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6584595460591754379}
   - component: {fileID: 644427779874530718}
   - component: {fileID: 1483654314928174432}
-  - component: {fileID: 578113930191406976}
+  - component: {fileID: 9223216219435019726}
   m_Layer: 0
   m_Name: FireCircle
   m_TagString: Untagged
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.50000006
---- !u!114 &578113930191406976
+--- !u!114 &9223216219435019726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6414094554983558170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e614c840bbc8d8109447c758fdfb00b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c9ddc07dbee9741bb51c076f702b830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transparency: 1

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5307605595756312531}
   - component: {fileID: 2712200170260977014}
   - component: {fileID: 129107956474272042}
-  - component: {fileID: 4334792459925833964}
-  - component: {fileID: 4534414402811042398}
-  - component: {fileID: 78792175024466294}
-  - component: {fileID: 441160648613236402}
+  - component: {fileID: 3254993344037706986}
+  - component: {fileID: 8944131816855243665}
+  - component: {fileID: 1906662875310922720}
+  - component: {fileID: 7221594607015324309}
   - component: {fileID: 8914880276619227192}
   m_Layer: 0
   m_Name: BossMovement
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4334792459925833964
+--- !u!114 &3254993344037706986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,27 +129,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8842863809274163317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab3c94bea3cbc34cb5f7e596896e70f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 0
---- !u!114 &4534414402811042398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8842863809274163317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc821a8429d12dc4594e21e9e0bb66ae, type: 3}
+  m_Script: {fileID: 11500000, guid: ff6d15fd0fb4bd67e87582a466a1ad5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2341151746591651851, guid: 3d3356c81c4b2fa4bb2a6597ba314b64, type: 3}
   fireRate: 1
   shootingDistance: 10
---- !u!114 &78792175024466294
+--- !u!114 &8944131816855243665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,11 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8842863809274163317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e01973ab7a0e9469278c60094d5cb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6791a47c35a179e4b9b32dda6fabbb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
---- !u!114 &441160648613236402
+--- !u!114 &1906662875310922720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,11 +157,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 8842863809274163317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba22ebbacb9016347928282f2ce062c0, type: 3}
+  m_Script: {fileID: 11500000, guid: c06cd64fab795485b992fd05c8003a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillImage: {fileID: 0}
-  bossHealth: {fileID: 0}
+  maxHealth: 10
+  currentHealth: 0
+--- !u!114 &7221594607015324309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842863809274163317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a99d56e4541154ab11ce92c897962a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!61 &8914880276619227192
 BoxCollider2D:
   m_ObjectHideFlags: 0
