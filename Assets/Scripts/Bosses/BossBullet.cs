@@ -46,15 +46,20 @@ public class BulletBehavior : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            BossPlayerHealth playerHealth = collision.GetComponent<BossPlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damage);
-                Debug.Log("Hit!");
-            }
+            PlayerHealth plyr = collision.GetComponent<PlayerHealth>();
+            DealDamage(damage, plyr);
             Instantiate(fireObject, new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z), quaternion.identity);
             Destroy(gameObject);
 
+        }
+    }
+
+    void DealDamage(int dmg, PlayerHealth player) 
+    {
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+            Debug.Log(damage + " damage dealt to player");
         }
     }
 }
