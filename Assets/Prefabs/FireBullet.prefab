@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2341151746591651851}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8660357, y: 0.014234196, z: 0}
+  m_LocalPosition: {x: 4.74, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -178,3 +178,4 @@ MonoBehaviour:
   speed: 5
   damage: 1
   lifetime: 3
+  fireObject: {fileID: 5487564694187476321, guid: 8c5151a567da574f083bd178340ed85c, type: 3}
