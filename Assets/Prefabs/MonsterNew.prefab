@@ -413,7 +413,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1314361411799959879, guid: f85f45e4766f1514984db77f973b59b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -589,7 +589,7 @@ MonoBehaviour:
   deathEffect: {fileID: 4998741306762305806, guid: 1a14809e1b194b74caa043e1a76388eb, type: 3}
   itemDrops:
   - {fileID: 2951135984635660986, guid: c77f2378321c0614e95159b97a9195a5, type: 3}
-  keyPrefab: {fileID: 6639995536423794293, guid: 6c213482a28931d41813c948fe27b92f, type: 3}
+  keyPrefab: {fileID: 2951135984635660986, guid: fe80b2bc5c1096844a06dc3a1cdbe2fd, type: 3}
   keyDropChance: 0.1
 --- !u!114 &2776850444031492909
 MonoBehaviour:
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e527f68d7c5b54e88eff0acea1357d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 7178354540221184123, guid: 4ccd17dcb7923dd44a6b2352928de842, type: 3}
   chaseDistance: 2
   moveSpeed: 3
   chaseDuration: 7

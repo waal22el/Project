@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0f294e33cfa9cb84e85c0721b77b0a19
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195748
+  packageName: PixelArtCamera
+  packageVersion: 0.1
+  assetPath: Assets/PixelArtCamera/Example/Tilemap/colored_tilemap_139.asset
+  uploadId: 434618

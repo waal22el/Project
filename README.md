@@ -39,6 +39,8 @@ Start the project, click on window then general and klick on test runner. Click 
 Pixel crawler - Free pack
 
 # CI badge
-![.NET CI](https://github.com/waal22el/Project/actions/workflows/CI.yml/badge.svg)
+![Ci status](https://github.com/waal22el/Project/actions/runs/15028231542/workflow)
 
+# Linter
+Type in either dotnet-format --check or dotnet-format in the console
 

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-
     public float speed = 5f;
 
     float xInput;
@@ -22,7 +21,6 @@ public class movement : MonoBehaviour
 
     void FixedUpdate()
     {
-
         rb.linearVelocity = new Vector2(xInput, yInput) * speed;
     }
 }

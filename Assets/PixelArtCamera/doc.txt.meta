@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7f69fafb5f15972439b7ab467444fe53
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195748
+  packageName: PixelArtCamera
+  packageVersion: 0.1
+  assetPath: Assets/PixelArtCamera/doc.txt
+  uploadId: 434618
