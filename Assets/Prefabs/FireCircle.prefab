@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1652337465469428739}
   - component: {fileID: 8066386101887087102}
+  - component: {fileID: -5228396698407743309}
   m_Layer: 0
   m_Name: FireCircle
   m_TagString: Untagged
@@ -87,3 +88,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5228396698407743309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5487564694187476321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9ddc07dbee9741bb51c076f702b830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
