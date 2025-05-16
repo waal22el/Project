@@ -41,11 +41,16 @@ public class BulletBehavior : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time >= lifetime)
+        if (time != 0 && time % 1 == 0)
         {
-            Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y, 0), quaternion.identity);
-            Destroy(gameObject);
+            rb.linearVelocity *= 0.5f;
         }
+
+        if (time >= lifetime)
+            {
+                Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y, 0), quaternion.identity);
+                Destroy(gameObject);
+            }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -53,10 +58,10 @@ public class BulletBehavior : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            PlayerHealth plyr = collision.GetComponentInParent<PlayerHealth>();
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             Debug.Log("Collision with: " + collision.name);
-            Debug.Log("Found PlayerHealth? " + (plyr != null));
-            DealDamage(damage, plyr);
+            Debug.Log("Found PlayerHealth? " + (playerHealth != null));
+            DealDamage(damage, playerHealth);
             Instantiate(fireObject, new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z), quaternion.identity);
             Destroy(gameObject);
 
@@ -65,7 +70,7 @@ public class BulletBehavior : MonoBehaviour
 
     void DealDamage(int dmg, PlayerHealth playerH) 
     {
-        Debug.Log("player = null: " + (player == null));
+        Debug.Log("player = null: " + (playerH == null));
         if (playerH != null)
         {
             playerH.TakeDamage(dmg);
