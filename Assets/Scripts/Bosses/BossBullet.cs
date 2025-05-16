@@ -46,7 +46,9 @@ public class BulletBehavior : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            PlayerHealth plyr = collision.GetComponent<PlayerHealth>();
+            PlayerHealth plyr = collision.GetComponentInParent<PlayerHealth>();
+            Debug.Log("Collision with: " + collision.name);
+            Debug.Log("Found PlayerHealth? " + (plyr != null));
             DealDamage(damage, plyr);
             Instantiate(fireObject, new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z), quaternion.identity);
             Destroy(gameObject);
@@ -54,11 +56,12 @@ public class BulletBehavior : MonoBehaviour
         }
     }
 
-    void DealDamage(int dmg, PlayerHealth player) 
+    void DealDamage(int dmg, PlayerHealth playerH) 
     {
-        if (player != null)
+        Debug.Log("player = null: " + (player == null));
+        if (playerH != null)
         {
-            player.TakeDamage(damage);
+            playerH.TakeDamage(dmg);
             Debug.Log(damage + " damage dealt to player");
         }
     }
