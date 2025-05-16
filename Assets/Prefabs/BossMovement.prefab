@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2341151746591651851, guid: 3d3356c81c4b2fa4bb2a6597ba314b64, type: 3}
-  fireRate: 1
-  shootingDistance: 10
+  fireRate: 3
+  shootingDistance: 20
+  forgetDistance: 15
+  chaseSpeed: 2
 --- !u!114 &78792175024466294
 MonoBehaviour:
   m_ObjectHideFlags: 0

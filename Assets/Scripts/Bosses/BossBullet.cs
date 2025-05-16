@@ -6,9 +6,9 @@ public class BulletBehavior : MonoBehaviour
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private int damage = 1;
-    [SerializeField] private float lifetime = 3f;
     [SerializeField] private GameObject fireObject;
 
+    private float lifetime;
     private GameObject player;
 
     private Rigidbody2D rb;
@@ -24,8 +24,15 @@ public class BulletBehavior : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
+
+            float disctance = Vector2.Distance(transform.position, player.transform.position);
+            lifetime = disctance / speed;
+        
+
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
+
+
         }
 
     }
@@ -34,11 +41,16 @@ public class BulletBehavior : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if(time >= lifetime)
+        if (time != 0 && time % 1 == 0)
         {
-            Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y,0), quaternion.identity);
-            Destroy(gameObject);
+            rb.linearVelocity *= 0.5f;
         }
+
+        if (time >= lifetime)
+            {
+                Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y, 0), quaternion.identity);
+                Destroy(gameObject);
+            }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -46,20 +58,19 @@ public class BulletBehavior : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            PlayerHealth plyr = collision.GetComponent<PlayerHealth>();
-            DealDamage(damage, plyr);
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            DealDamage(damage, playerHealth);
             Instantiate(fireObject, new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z), quaternion.identity);
             Destroy(gameObject);
 
         }
     }
 
-    void DealDamage(int dmg, PlayerHealth player) 
+    void DealDamage(int dmg, PlayerHealth playerH) 
     {
-        if (player != null)
+        if (playerH != null)
         {
-            player.TakeDamage(damage);
-            Debug.Log(damage + " damage dealt to player");
+            playerH.TakeDamage(dmg);
         }
     }
 }
