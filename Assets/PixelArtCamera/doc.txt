@@ -1,0 +1,33 @@
+
+# PixelArtCamera
+
+A very simple Unity camera tool that can be used to render pixel art with pixel perfect precision at any resolution.
+
+## How it works
+
+This tool works by rendering the game at the target resolution and then upscale it by the biggest possible integer factor.
+This way, the pixel art will always remain pixel perfect with no artifacts.
+
+The source code is quite simple and heavily commented, so feel free to dig into it and modify it to suit your needs.
+
+## Pixel Perfect Text
+
+This tool requires TextMeshPro in order to achieve crispy pixel perfect text.
+In the example scene it is also showed how to set up a TMP font asset.
+If you're having troubles with it, try reading some guides about pixel perfect fonts with TMP and keep fiddling with it.
+
+# UI
+
+Unity UI is not yet supported, since usually games that requires pixel perfect precision should not need auto-scaling ui systems like the one provided by Unity.
+These games should be able to build their own ui with just sprites and text meshes.
+
+# Contacts
+
+If you have questions or requests for new features, feel free to contact me on Discord at Pole#9615
+
+If you'd like to contribute to the asset, you can find it at https://github.com/Pole458/PixelArtCamera
+
+# Licenses
+
+All the art assets are from Kenney.
+Licenses are included for both the font and the tilemap.

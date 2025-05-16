@@ -24,3 +24,4 @@ public class movement : MonoBehaviour
         rb.linearVelocity = new Vector2(xInput, yInput) * speed;
     }
 }
+

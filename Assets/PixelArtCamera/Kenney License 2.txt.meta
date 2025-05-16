@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 56246e69acb2dcb41938d98c0285a6fc
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195748
+  packageName: PixelArtCamera
+  packageVersion: 0.1
+  assetPath: Assets/PixelArtCamera/Kenney License 2.txt
+  uploadId: 434618
