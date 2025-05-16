@@ -1,3 +1,5 @@
+using System.Collections;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class FireCircleBehavior : MonoBehaviour
@@ -5,11 +7,20 @@ public class FireCircleBehavior : MonoBehaviour
     [Range(0f, 1f)]
     public float transparency = 1f; // 0 = fully transparent, 1 = fully opaque
     [SerializeField] private float lifetime = 5f;
+    [SerializeField] private float damage = 10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private float time = 0f;
+    private GameObject player;
+    private bool insideFire = false;
+
+
     void Start()
     {
         SetObjectTransparency(transparency);
+
+        player = GameObject.FindWithTag("Player");
+
+        StartCoroutine("DealDamage");
     }
 
     // Update is called once per frame
@@ -17,14 +28,54 @@ public class FireCircleBehavior : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        float fractionTime = time/lifetime;
+        float fractionTime = time / lifetime;
 
-        SetObjectTransparency(transparency * (1-fractionTime));
+        SetObjectTransparency(transparency * (1 - fractionTime));
 
-        if(time >= lifetime)
-            Destroy(gameObject);
+        if (time >= lifetime)
+            Destroy(gameObject);    
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        insideFire = true;
+        
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        
+        insideFire = false;
+    }
+
+    public IEnumerator DealDamage()
+    {
+            // Wait for the first frame if not inside the fire
+        if (!insideFire)
+        {
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(DealDamage());
+            yield break;
+        }
+
+        // Check if player still exists
+        if (player == null)
+        {
+            yield break;
+        }
+
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            Debug.Log(damage + " Damage dealt");
+            int intDamage = Mathf.RoundToInt(damage);
+            playerHealth.TakeDamage(intDamage);
+        }
+
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(DealDamage());  
+    }
     public void SetObjectTransparency(float alpha)
     {
         Renderer renderer = GetComponent<Renderer>();

@@ -59,8 +59,6 @@ public class BulletBehavior : MonoBehaviour
         {
 
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            Debug.Log("Collision with: " + collision.name);
-            Debug.Log("Found PlayerHealth? " + (playerHealth != null));
             DealDamage(damage, playerHealth);
             Instantiate(fireObject, new Vector3(player.transform.position.x, player.transform.position.y,player.transform.position.z), quaternion.identity);
             Destroy(gameObject);
@@ -70,11 +68,9 @@ public class BulletBehavior : MonoBehaviour
 
     void DealDamage(int dmg, PlayerHealth playerH) 
     {
-        Debug.Log("player = null: " + (playerH == null));
         if (playerH != null)
         {
             playerH.TakeDamage(dmg);
-            Debug.Log(damage + " damage dealt to player");
         }
     }
 }
