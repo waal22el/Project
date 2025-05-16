@@ -181,7 +181,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 127722005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 9.8, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1161,11 +1161,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5307605595756312531, guid: eddb3a53d05594f438aad3f4ae8cdbae, type: 3}
       propertyPath: m_LocalPosition.x
+
       value: 2.75
+
       objectReference: {fileID: 0}
     - target: {fileID: 5307605595756312531, guid: eddb3a53d05594f438aad3f4ae8cdbae, type: 3}
       propertyPath: m_LocalPosition.y
+
       value: 0.25
+
       objectReference: {fileID: 0}
     - target: {fileID: 5307605595756312531, guid: eddb3a53d05594f438aad3f4ae8cdbae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2556,6 +2560,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874445550}
   m_CullTransparentMesh: 1
+
 --- !u!1 &2045646803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8842863809274163317, guid: eddb3a53d05594f438aad3f4ae8cdbae, type: 3}
@@ -2739,6 +2744,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3356c81c4b2fa4bb2a6597ba314b64, type: 3}
+
 --- !u!1001 &5174448496460521605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2804,8 +2810,10 @@ PrefabInstance:
       value: FireBoss
       objectReference: {fileID: 0}
     - target: {fileID: 8842863809274163317, guid: eddb3a53d05594f438aad3f4ae8cdbae, type: 3}
+
       propertyPath: m_IsActive
       value: 1
+
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2868,9 +2876,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 127722008}
   - {fileID: 5174448496460521605}
+
   - {fileID: 925430278}
   - {fileID: 1695074532}
   - {fileID: 4024256874573890067}
+
   - {fileID: 283572359}
   - {fileID: 445248056}
   - {fileID: 1288462612}

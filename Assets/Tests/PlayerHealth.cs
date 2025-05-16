@@ -12,12 +12,16 @@ public class PlayerHealth : MonoBehaviour
 
     // Update is called once per frame
     public void TakeDamage(int damage)
-    {
+    {   
+        Debug.Log($"[PlayerHealth] Taking {damage} damage. Health before: {health}");
         health -= damage;
+        Debug.Log($"[PlayerHealth] Health after: {health}");
+
         if(health <= 0)
         {
+            Debug.Log("[PlayerHealth] Player destroyed!");
             Destroy(gameObject);
         }
-
     }
+
 }
