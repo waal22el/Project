@@ -6,9 +6,9 @@ public class BulletBehavior : MonoBehaviour
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private int damage = 1;
-    [SerializeField] private float lifetime = 3f;
     [SerializeField] private GameObject fireObject;
 
+    private float lifetime;
     private GameObject player;
 
     private Rigidbody2D rb;
@@ -24,8 +24,15 @@ public class BulletBehavior : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
+
+            float disctance = Vector2.Distance(transform.position, player.transform.position);
+            lifetime = disctance / speed;
+        
+
             Vector2 direction = (player.transform.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
+
+
         }
 
     }
@@ -34,9 +41,9 @@ public class BulletBehavior : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if(time >= lifetime)
+        if (time >= lifetime)
         {
-            Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y,0), quaternion.identity);
+            Instantiate(fireObject, new Vector3(rb.position.x, rb.position.y, 0), quaternion.identity);
             Destroy(gameObject);
         }
     }
