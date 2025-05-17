@@ -94,7 +94,7 @@ public class MonsterDamage : MonoBehaviour
         {
             GameObject key = Instantiate(keyPrefab, transform.position, Quaternion.identity);
             AddDropForce(key);
-            return; 
+            return;
         }
 
         if (itemDrops.Length > 0)
@@ -104,6 +104,7 @@ public class MonsterDamage : MonoBehaviour
             AddDropForce(droppedItem);
         }
     }
+
 
     private void AddDropForce(GameObject item)
     {
