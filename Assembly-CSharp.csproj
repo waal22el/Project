@@ -71,6 +71,8 @@
     <Compile Include="Assets\Scripts\Mobs\Movment2.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Inventory\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\Bosses\ContinueButton.cs" />
+    <Compile Include="Assets\Scripts\Mobs\ContinueGame.cs" />
     <Compile Include="Assets\Scripts\Mobs\Bullets.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Mobs\Directions.cs" />

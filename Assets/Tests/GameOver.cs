@@ -5,7 +5,7 @@ public class GameOver : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("Project"); 
+        SceneManager.LoadScene("Dungeons"); 
     }
 
 }
