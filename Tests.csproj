@@ -61,13 +61,14 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="Assets\Tests\Movement.cs" />
     <Compile Include="Assets\Tests\MonsterChasing.cs" />
     <Compile Include="Assets\Tests\Bullets.cs" />
     <Compile Include="Assets\Tests\Movment2.cs" />
     <Compile Include="Assets\Tests\MonsterDamageTests.cs" />
     <Compile Include="Assets\Tests\MainMenu.cs" />
+    <Compile Include="Assets\Tests\IntegrationTest.cs" />
+    <Compile Include="Assets\Tests\Bosses\FireCircleBehavior.cs" />
     <Compile Include="Assets\Tests\GameOver.cs" />
     <Compile Include="Assets\Tests\EnemyAttack.cs" />
     <Compile Include="Assets\Tests\PlayerMovement.cs" />
@@ -76,10 +77,10 @@
     <Compile Include="Assets\Tests\Items.cs" />
     <Compile Include="Assets\Tests\Spawner.cs" />
     <Compile Include="Assets\Tests\ShootArrows.cs" />
+    <Compile Include="Assets\Tests\Bosses\FireCircleBehaviorTests.cs" />
     <Compile Include="Assets\Tests\PostBossMenuUI.cs" />
     <Compile Include="Assets\Tests\Directions.cs" />
     <Compile Include="Assets\Tests\PlayerAttack.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Tests\Tests.asmdef" />
