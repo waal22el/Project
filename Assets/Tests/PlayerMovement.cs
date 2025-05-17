@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public int MoveLeft = 0;
     public int MoveRight = 0;
     public int MoveDown = 0;
+
+    private float time = 0f;
+
+    private bool twoSecondTimerPassed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
@@ -34,23 +38,25 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForceY(-MoveDown);
         }
 
-
-        if (Input.GetKeyUp(KeyCode.W))
+        //Stop moving when buttons are released
+        if (Input.GetKeyUp(KeyCode.W) )
         {
-            rb.AddForceY(-MoveUpwards);
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            rb.AddForceX(MoveLeft);
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            rb.AddForceX(-MoveRight);
+            rb.linearVelocityY = 0;
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
-            rb.AddForceY(MoveDown);
+            rb.linearVelocityY = 0;
         }
+
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            rb.linearVelocityX = 0;
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            rb.linearVelocityX = 0;
+        }
+        
 
     }
 
