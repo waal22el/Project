@@ -4,13 +4,20 @@ public class FireBossAttack : BossAttack
 {
     protected override void Attack()
     {
-        // Skapa en FireBullet (bullet är redan satt i Inspector)
-        Instantiate(bullet, transform.position, Quaternion.identity);
 
-        // Här kan du spela Fire-attack-animation eller ljud
+        Vector3 direction = player.position - transform.position;
+        direction.z = 0; // Only needed in 2D games to avoid tilting into Z
+
+        // Calculate rotation
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
+
+        // Instantiate and apply rotation
+        Instantiate(bullet, transform.position, rotation);
+
+        // Hï¿½r kan du spela Fire-attack-animation eller ljud
         Debug.Log("FireBoss skjuter!");
 
-        // Sen uppdateras cooldown och avstånd i BossAttack
+        // Sen uppdateras cooldown och avstï¿½nd i BossAttack
     }
 }
 
