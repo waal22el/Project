@@ -1,3 +1,4 @@
+
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
@@ -71,8 +72,6 @@
     <Compile Include="Assets\Scripts\Mobs\Movment2.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Inventory\Items\Item.cs" />
-    <Compile Include="Assets\Scripts\Bosses\ContinueButton.cs" />
-    <Compile Include="Assets\Scripts\Mobs\ContinueGame.cs" />
     <Compile Include="Assets\Scripts\Mobs\Bullets.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Mobs\Directions.cs" />
@@ -128,7 +127,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Dungeons\DungeonGenerator.cs" />
     <Compile Include="Assets\Scripts\Dungeons\WallGenerator.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerPickUpItems.cs" />
     <Compile Include="Assets\Scripts\Dungeons\CorridorFirstDungeonGenerator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
