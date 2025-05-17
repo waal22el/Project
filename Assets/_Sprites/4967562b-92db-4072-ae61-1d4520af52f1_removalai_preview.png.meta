@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2fc2deed91ccf914c921afcb19eda864
+guid: e6457f0c08c8b072b8e47ac1f9be429c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8164173006454210751
-    second: Screenshot 2025-05-16 140348_0
+      213: 1580735462130395946
+    second: 4967562b-92db-4072-ae61-1d4520af52f1_removalai_preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot 2025-05-16 140348_0
+      name: 4967562b-92db-4072-ae61-1d4520af52f1_removalai_preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 252
-        height: 308
+        x: 144
+        y: 63
+        width: 304
+        height: 506
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14fb67108e703be80800000000000000
-      internalID: -8164173006454210751
+      spriteID: a2b25281786efe510800000000000000
+      internalID: 1580735462130395946
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screenshot 2025-05-16 140348_0: -8164173006454210751
+      4967562b-92db-4072-ae61-1d4520af52f1_removalai_preview_0: 1580735462130395946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
