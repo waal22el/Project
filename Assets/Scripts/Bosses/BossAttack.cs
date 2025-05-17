@@ -4,8 +4,8 @@ public class BossAttack : MonoBehaviour
 {
     public GameObject bullet;
     public float fireRate = 1f;
-    public float shootingDistance = 5f;    // När bossen börjar skjuta och jaga
-    public float forgetDistance = 15f;     // När bossen glömmer och återgår till patrull
+    public float shootingDistance = 5f;
+    public float forgetDistance = 15f;
     public float chaseSpeed = 2f;
 
     protected float nextFire;
@@ -35,24 +35,21 @@ public class BossAttack : MonoBehaviour
             if (patrolScript != null)
                 patrolScript.enabled = false;
 
-            rb.linearVelocity = Vector2.zero; // Stanna och skjut
-            CheckIfTimeToFire();
+            ChasePlayer();         // Boss rör sig mot spelaren
+            CheckIfTimeToFire();   // Boss skjuter samtidigt
         }
         else if (playerDetected && distance <= forgetDistance)
         {
-            // Jaga och skjut samtidigt
             ChasePlayer();
             CheckIfTimeToFire();
         }
         else
         {
-            // Glöm spelaren, gå tillbaka till patrullering
+            // Spelaren har lämnat området, patrullera vidare
             playerDetected = false;
 
             if (patrolScript != null)
                 patrolScript.enabled = true;
-
-            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -82,6 +79,4 @@ public class BossAttack : MonoBehaviour
             bulletRb.linearVelocity = direction * 10f; // Bullet speed
     }
 }
-
-
 
