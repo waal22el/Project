@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gustav_Robert_Kirchhoff_0: -1206310772932358520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForceY(-MoveDown);
         }
 
+
         if (Input.GetKeyUp(KeyCode.W))
         {
             rb.AddForceY(-MoveUpwards);
