@@ -71,6 +71,7 @@
     <Compile Include="Assets/Tests/Movment2.cs" />
     <Compile Include="Assets/Tests/MonsterDamageTests.cs" />
     <Compile Include="Assets/Tests/MainMenu.cs" />
+    <Compile Include="Assets/Tests/Bosses/FireCircleBehavior.cs" />
     <Compile Include="Assets/Tests/GameOver.cs" />
     <Compile Include="Assets/Tests/EnemyAttack.cs" />
     <Compile Include="Assets/Tests/PlayerMovement.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets/Tests/Items.cs" />
     <Compile Include="Assets/Tests/Spawner.cs" />
     <Compile Include="Assets/Tests/ShootArrows.cs" />
+    <Compile Include="Assets/Tests/Bosses/FireCircleBehaviorTests.cs" />
     <Compile Include="Assets/Tests/PostBossMenuUI.cs" />
     <Compile Include="Assets/Tests/Directions.cs" />
     <Compile Include="Assets/Tests/PlayerAttack.cs" />
