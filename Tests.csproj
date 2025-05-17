@@ -64,6 +64,7 @@
     <Compile Include="Assets\Tests\Movement.cs" />
     <Compile Include="Assets\Tests\MonsterChasing.cs" />
     <Compile Include="Assets\Tests\Bullets.cs" />
+    <Compile Include="Assets\Tests\ContinueGame.cs" />
     <Compile Include="Assets\Tests\Movment2.cs" />
     <Compile Include="Assets\Tests\MonsterDamageTests.cs" />
     <Compile Include="Assets\Tests\MainMenu.cs" />
