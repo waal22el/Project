@@ -71,11 +71,8 @@
     <Compile Include="Assets\Scripts\Mobs\Movment2.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Inventory\Items\Item.cs" />
-    <Compile Include="Assets\Scripts\Bosses\ContinueButton.cs" />
-    <Compile Include="Assets\Scripts\Mobs\ContinueGame.cs" />
     <Compile Include="Assets\Scripts\Mobs\Bullets.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
-    <Compile Include="Assets\AudioSource.cs" />
     <Compile Include="Assets\Scripts\Mobs\Directions.cs" />
     <Compile Include="Assets\Scripts\Bosses\Animation\BossAnimationController.cs" />
     <Compile Include="Assets\Scripts\Mobs\GameOver.cs" />
@@ -94,7 +91,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Inventory\Items\ItemSO.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\FootstepsSound.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
