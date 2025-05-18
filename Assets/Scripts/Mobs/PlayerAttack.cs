@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Vänsterklick
+        if (Input.GetMouseButtonDown(0)) // VÃ¤nsterklick fÃ¶r attack
         {
             Vector2 mousePos = playerCamera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
@@ -16,25 +16,25 @@ public class PlayerAttack : MonoBehaviour
             {
                 Debug.Log("Hit: " + hit.collider.name);
 
-                // Försök hitta MonsterDamage-komponenten först
-                MonsterDamage monster = hit.collider.GetComponent<MonsterDamage>();
-                if (monster != null)
-                {
-                    monster.TakeDamage((int)damage); // Antar att MonsterDamage använder int för skada
-                    Debug.Log("Monster took damage!");
-                    return; // Hoppa ut, vi behöver inte fortsätta kolla
-                }
-
-                // Försök hitta BossHealth-komponenten om det inte var ett monster
-                BossHealth boss = hit.collider.GetComponent<BossHealth>();
+                //  FÃ¶rsÃ¶k hitta BossAnimationController fÃ¶rst
+                BossAnimationController boss = hit.collider.GetComponent<BossAnimationController>();
                 if (boss != null)
                 {
                     boss.TakeDamage((int)damage);
-                    Debug.Log("Boss took damage!");
-                    return;
+                    Debug.Log("Boss took " + damage + " damage!");
+                    return; // Boss trÃ¤ffad, avbryt hÃ¤r
                 }
 
-                Debug.Log("Hit something, but it has no health script.");
+                // Om det inte var en boss, kolla om det Ã¤r en mob (MonsterDamage)
+                MonsterDamage mob = hit.collider.GetComponent<MonsterDamage>();
+                if (mob != null)
+                {
+                    mob.TakeDamage((int)damage);
+                    Debug.Log("Mob took " + damage + " damage!");
+                    return; // Mob trÃ¤ffad, avbryt hÃ¤r
+                }
+
+                Debug.Log("Hit something, but it has no damage script.");
             }
             else
             {
