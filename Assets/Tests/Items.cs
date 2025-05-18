@@ -23,9 +23,8 @@ public class Items : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!canPickup) return;
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && canPickup)
         {
             Destroy(gameObject);
             Debug.Log("Item collected!");

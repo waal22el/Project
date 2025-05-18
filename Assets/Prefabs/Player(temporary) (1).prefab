@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8245611514905948271}
   - component: {fileID: 4132839707129377889}
   - component: {fileID: 2387728127361364951}
-  - component: {fileID: 3242147765617472949}
   - component: {fileID: 2355540064166022015}
   - component: {fileID: 5318957543059171770}
   m_Layer: 0
@@ -109,7 +108,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+<<<<<<< HEAD:Assets/Prefabs/Player(temporary) (1).prefab
   health: -18
+=======
+  health: 0
+>>>>>>> c5a8409ff4d1bdcfedf5be4d7ff75075814576e2:Assets/Prefabs/Player(temporary).prefab
   healthBar: {fileID: 0}
 --- !u!50 &4299522939551640034
 Rigidbody2D:
@@ -214,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+<<<<<<< HEAD:Assets/Prefabs/Player(temporary) (1).prefab
   playerCamera: {fileID: 1387903615961017518}
 --- !u!114 &3242147765617472949
 MonoBehaviour:
@@ -228,6 +232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupRadius: 1.5
+=======
+  playerCamera: {fileID: 0}
+>>>>>>> c5a8409ff4d1bdcfedf5be4d7ff75075814576e2:Assets/Prefabs/Player(temporary).prefab
 --- !u!58 &2355540064166022015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -262,8 +269,13 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
+<<<<<<< HEAD:Assets/Prefabs/Player(temporary) (1).prefab
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+=======
+  m_Offset: {x: 0, y: 0.31}
+  m_Radius: 0.21
+>>>>>>> c5a8409ff4d1bdcfedf5be4d7ff75075814576e2:Assets/Prefabs/Player(temporary).prefab
 --- !u!95 &5318957543059171770
 Animator:
   serializedVersion: 7
