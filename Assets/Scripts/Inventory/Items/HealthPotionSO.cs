@@ -7,6 +7,6 @@ public class HealthPotionSO : ItemSO
 
     public override void Use()
     {
-        GameObject.FindFirstObjectByType<PlayerController>().Heal(healing);
+        GameObject.FindFirstObjectByType<PlayerHealth>().Heal(healing);
     }
 }
