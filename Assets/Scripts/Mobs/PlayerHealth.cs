@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -20,5 +21,10 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(gameObject);
         }
 
+    }
+
+    internal void Heal(int healing)
+    {
+        throw new NotImplementedException();
     }
 }
