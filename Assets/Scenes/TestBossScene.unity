@@ -206,11 +206,11 @@ Transform:
   m_GameObject: {fileID: 127722005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -139.45, y: 64.78718, z: -9.681451}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -826.89996, y: 388.72308, z: -10}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 706884317}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &127722009
 MonoBehaviour:
@@ -655,9 +655,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 715498157899229629, guid: 7904f8af4ea68364c900a67e328ed2a5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 204470484}
-    - targetCorrespondingSourceObject: {fileID: 715498157899229629, guid: 7904f8af4ea68364c900a67e328ed2a5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 127722008}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5513768716179797744, guid: 7904f8af4ea68364c900a67e328ed2a5, type: 3}
       insertIndex: -1
@@ -1412,12 +1409,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5307605595756312531, guid: e66edd59b844a5b748f54148ceae59c1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307605595756312531, guid: e66edd59b844a5b748f54148ceae59c1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307605595756312531, guid: e66edd59b844a5b748f54148ceae59c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.75
+      value: 2.749939
       objectReference: {fileID: 0}
     - target: {fileID: 5307605595756312531, guid: e66edd59b844a5b748f54148ceae59c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.25003052
       objectReference: {fileID: 0}
     - target: {fileID: 5307605595756312531, guid: e66edd59b844a5b748f54148ceae59c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1553,4 +1558,5 @@ SceneRoots:
   - {fileID: 1144618363}
   - {fileID: 1149905244}
   - {fileID: 765944148}
+  - {fileID: 127722008}
   - {fileID: 1695074532}

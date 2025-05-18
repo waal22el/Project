@@ -4,16 +4,35 @@ using UnityEngine.UIElements.Experimental;
 public class Item : MonoBehaviour
 {
     public ItemSO itemSO;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("Settings")]
+    public float pickupDelay = 0.5f;
+    private bool canPickup = false;
+
     void Start()
     {
-        
+        if (TryGetComponent<Rigidbody2D>(out var rb))
+        {
+            rb.AddForce(new Vector2(Random.Range(-1f, 1f), 3f), ForceMode2D.Impulse);
+        }
+
+        Invoke(nameof(EnablePickup), pickupDelay);
     }
 
-    // Update is called once per frame
-    void Update()
+    void EnablePickup()
     {
-        
+        canPickup = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!canPickup) return;
+
+        if (other.CompareTag("Player"))
+        {
+            PickUp();
+            Debug.Log("Item collected!");
+        }
     }
 
     public virtual void Use()

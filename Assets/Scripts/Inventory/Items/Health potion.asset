@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49ba86b66df52eb4890c606fdb3b37f7, type: 3}
-  m_Name: Health Potion
+  m_Name: Health potion
   m_EditorClassIdentifier: 
   icon: {fileID: 2398268216345953637, guid: 27a051490feceec40bebece8b6541a9c, type: 3}
   prefab: {fileID: 2951135984635660986, guid: fe80b2bc5c1096844a06dc3a1cdbe2fd, type: 3}
-  maxStacks: 0
+  maxStacks: 1
   permanent: 0
   healing: 5

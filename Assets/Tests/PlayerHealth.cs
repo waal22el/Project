@@ -4,10 +4,13 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 10;
     public int health;
+
+    public HealthBar healthBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health = maxHealth;
+        healthBar.SetMaxHP(maxHealth);
     }
 
     // Update is called once per frame
@@ -24,4 +27,9 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void Heal(int healing)
+    {
+        health = Mathf.Min(health + healing, maxHealth);
+        healthBar.SetHP(health);
+    }
 }
