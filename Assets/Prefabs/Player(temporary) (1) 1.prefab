@@ -216,7 +216,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1387903615961017518}
   arrowPrefab: {fileID: 6298337585498228852, guid: 4d113e78f5ca6e54f9f299ceb5cd7762, type: 3}
   fireRate: 1
-  arrowSpeed: 7
+  arrowSpeed: 20
   offset: {x: 1.6, y: 1.6, z: 0}
 --- !u!58 &2355540064166022015
 CircleCollider2D:

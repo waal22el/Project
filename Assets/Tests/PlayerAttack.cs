@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
 
     public GameObject arrowPrefab;
     public float fireRate = 1f;
-    public float arrowSpeed = 6f;
+    public float arrowSpeed = 25f;
     public Vector3 offset = Vector3.zero;
 
     private float nextShotTime;
