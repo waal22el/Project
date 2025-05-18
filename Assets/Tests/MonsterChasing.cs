@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class MonsterChasing : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MonsterChasing : MonoBehaviour
     void Start()
     {
         movementScript = GetComponent<Movement>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
     void Update()
