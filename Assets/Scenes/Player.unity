@@ -258,10 +258,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player(temporary)
       objectReference: {fileID: 0}
-    - target: {fileID: 9015255013039573748, guid: 7904f8af4ea68364c900a67e328ed2a5, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 8719812450780563807}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -817,17 +813,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80a85ee52f9308a4c85240b84193f86c, type: 3}
---- !u!114 &8719812450780563807 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7682907701342643371, guid: 80a85ee52f9308a4c85240b84193f86c, type: 3}
-  m_PrefabInstance: {fileID: 8719812450780563804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c28c59d6a2e1a8b4992ea27debe92f9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
