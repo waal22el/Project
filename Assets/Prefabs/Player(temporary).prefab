@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 2387728127361364951}
   - component: {fileID: 3242147765617472949}
   - component: {fileID: 2355540064166022015}
-  - component: {fileID: 1518075666954391500}
   - component: {fileID: 5318957543059171770}
   m_Layer: 0
   m_Name: Player(temporary)
@@ -110,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+  healthBar: {fileID: 0}
 --- !u!50 &4299522939551640034
 Rigidbody2D:
   serializedVersion: 5
@@ -261,26 +261,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &1518075666954391500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5513768716179797744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cac95a27ef1bb33409641ecc37f5cb56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hotbarSlots:
-  - {fileID: 2951135984635660986, guid: c77f2378321c0614e95159b97a9195a5, type: 3}
-  - {fileID: 2951135984635660986, guid: fe80b2bc5c1096844a06dc3a1cdbe2fd, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_Offset: {x: 0, y: 0.31}
+  m_Radius: 0.21
 --- !u!95 &5318957543059171770
 Animator:
   serializedVersion: 7
