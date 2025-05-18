@@ -14,16 +14,15 @@ public class PlayerHealth : MonoBehaviour
 
     // Update is called once per frame
     public void TakeDamage(int damage)
+{
+    health -= damage;
+    if (health <= 0)
     {
-        health -= damage;
-        if (health <= 0)
-        {
-            if (gameObject != null)
-                Destroy(gameObject);
-                gameOverUI.SetActive(true);
-        }
-
+        gameOverUI.SetActive(true);   // Show Game Over screen first
+        Destroy(gameObject);          // Then destroy the player
     }
+}
+
 
     internal void Heal(int healing)
     {
