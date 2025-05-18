@@ -63,6 +63,7 @@ public class PlayerAttack : MonoBehaviour
         GameObject arrow = Instantiate(arrowPrefab);
         arrow.transform.position = transform.position +
         (direction - transform.position).normalized * 2f + offset;
+        arrow.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         PlayerArrow arrowScript = arrow.GetComponent<PlayerArrow>();
         arrowScript.GoForth(arrowSpeed, (int)damage, new Vector2(direction.x, direction.y));

@@ -31,6 +31,12 @@ public class PlayerArrow : MonoBehaviour
             float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
+        Invoke("DisableBullet", 7f);
+    }
+
+    void DisableBullet()
+    {
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -38,8 +44,9 @@ public class PlayerArrow : MonoBehaviour
         if (col.CompareTag("Enemy") || col.CompareTag("Boss"))
         {
             col.GetComponent<MonsterDamage>()?.TakeDamage(damage);
+            Debug.Log("Hit");
         }
-        else if(!col.CompareTag("Player"))
+        if(!col.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
