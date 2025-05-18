@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public GameObject gameOverUI; 
     public int maxHealth = 10;
     public int health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,10 +16,11 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
-            if(gameObject != null)
+            if (gameObject != null)
                 Destroy(gameObject);
+                gameOverUI.SetActive(true);
         }
 
     }
