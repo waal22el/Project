@@ -70,6 +70,7 @@
     <Compile Include="Assets\Tests\MainMenu.cs" />
     <Compile Include="Assets\Tests\Bosses\FireCircleBehavior.cs" />
     <Compile Include="Assets\Tests\GameOver.cs" />
+    <Compile Include="Assets\Tests\PlayerArrow.cs" />
     <Compile Include="Assets\Tests\EnemyAttack.cs" />
     <Compile Include="Assets\Tests\PlayerMovement.cs" />
     <Compile Include="Assets\Tests\PlayerHealth.cs" />
