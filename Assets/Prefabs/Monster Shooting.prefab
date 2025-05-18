@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1778898918194218725}
   - component: {fileID: 8650251614010049313}
   - component: {fileID: 7584271865908748535}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Monster Shooting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
