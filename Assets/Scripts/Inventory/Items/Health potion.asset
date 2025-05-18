@@ -16,4 +16,4 @@ MonoBehaviour:
   prefab: {fileID: 2951135984635660986, guid: fe80b2bc5c1096844a06dc3a1cdbe2fd, type: 3}
   maxStacks: 1
   permanent: 0
-  healing: 5
+  healing: 20

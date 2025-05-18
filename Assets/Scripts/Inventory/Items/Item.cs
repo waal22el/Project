@@ -11,12 +11,12 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        if (TryGetComponent<Rigidbody2D>(out var rb))
+        /*if (TryGetComponent<Rigidbody2D>(out var rb))
         {
             rb.AddForce(new Vector2(Random.Range(-1f, 1f), 3f), ForceMode2D.Impulse);
-        }
+        } They can stay put*/
 
-        Invoke(nameof(EnablePickup), pickupDelay);
+        //Invoke(nameof(EnablePickup), pickupDelay);  Doesn't work with delay
     }
 
     void EnablePickup()
@@ -26,9 +26,8 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!canPickup) return;
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))// && canPickup) Doesn't work with delay
         {
             PickUp();
             Debug.Log("Item collected!");

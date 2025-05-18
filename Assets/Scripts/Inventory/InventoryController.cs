@@ -38,7 +38,18 @@ public class InventoryController : MonoBehaviour
 
     public bool AddItem(ItemSO itemSO)
     {
-        return currentSlot.GetComponent<InventoryItem>().Add(itemSO);
+        if (currentSlot.GetComponent<InventoryItem>().Add(itemSO))// Add to current
+        {
+            return true;
+        }
+        foreach (GameObject slot in hotbarSlots)// Check others if current is taken
+        {
+            if (slot.GetComponent<InventoryItem>().Add(itemSO))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void UseItem()
