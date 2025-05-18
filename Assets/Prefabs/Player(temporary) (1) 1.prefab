@@ -151,10 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  MoveUpwards: 150
-  MoveLeft: 150
-  MoveRight: 150
-  MoveDown: 150
+  MoveUpwards: 3
+  MoveLeft: 3
+  MoveRight: 3
+  MoveDown: 3
 --- !u!61 &4132839707129377889
 BoxCollider2D:
   m_ObjectHideFlags: 0
