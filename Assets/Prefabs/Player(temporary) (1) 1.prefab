@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8245611514905948271}
   - component: {fileID: 4132839707129377889}
   - component: {fileID: 2387728127361364951}
-  - component: {fileID: 3242147765617472949}
   - component: {fileID: 2355540064166022015}
   - component: {fileID: 5318957543059171770}
   m_Layer: 0
@@ -215,19 +214,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   playerCamera: {fileID: 1387903615961017518}
---- !u!114 &3242147765617472949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5513768716179797744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d9e95eebff208f43afe27d667ae609e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupRadius: 1.5
+  arrowPrefab: {fileID: 6298337585498228852, guid: 4d113e78f5ca6e54f9f299ceb5cd7762, type: 3}
+  fireRate: 1
+  arrowSpeed: 7
+  offset: {x: 1.6, y: 1.6, z: 0}
 --- !u!58 &2355540064166022015
 CircleCollider2D:
   m_ObjectHideFlags: 0
