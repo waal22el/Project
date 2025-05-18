@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 6010161013551294936}
   m_Layer: 0
   m_Name: PoissonBoss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
