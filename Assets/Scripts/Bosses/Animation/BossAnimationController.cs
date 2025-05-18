@@ -23,7 +23,7 @@ public class BossAnimationController : MonoBehaviour
             return;
         }
 
-        if (rb.linearVelocity.magnitude > 0.1f)
+        if (rb.velocity.magnitude > 0.1f)
         {
             animator.SetBool("isRunning", true);
         }
@@ -45,12 +45,25 @@ public class BossAnimationController : MonoBehaviour
     private void Die()
     {
         animator.SetTrigger("isDead");
-        StartCoroutine(RemoveAfterDeath());
+        StartCoroutine(DeathSequence());
     }
 
-    private System.Collections.IEnumerator RemoveAfterDeath()
+    private System.Collections.IEnumerator DeathSequence()
     {
-        yield return new WaitForSeconds(1.0f); //  efter Death-animationen
-        Destroy(gameObject);
+        yield return new WaitForSeconds(1.0f); // Vänta på dödsanimationen 
+
+        Destroy(gameObject); // Ta bort bossen
+
+        yield return new WaitForSeconds(0.5f); // paus innan menyn visas
+
+        PostBossMenuUI menuUI = FindObjectOfType<PostBossMenuUI>();
+        if (menuUI != null)
+        {
+            menuUI.ShowMenu(); // Visa menyn efter bossen försvunnit
+        }
+        else
+        {
+            Debug.LogError("PostBossMenuUI not found in scene!");
+        }
     }
 }
