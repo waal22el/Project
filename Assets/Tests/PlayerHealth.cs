@@ -28,9 +28,10 @@ public class PlayerHealth : MonoBehaviour
                 gameOverUI.SetActive(true);
             }
 
+            if(gameObject != null)
+                Destroy(gameObject);
+            //Debug.Log("[PlayerHealth] Player destroyed!");
             
-            Debug.Log("[PlayerHealth] Player destroyed!");
-            Destroy(gameObject);
             
         }
     }
