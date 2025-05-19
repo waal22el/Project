@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 8914880276619227192}
   - component: {fileID: 1148988989180641970}
   - component: {fileID: 6010161013551294936}
+  - component: {fileID: -4207397299489165807}
   m_Layer: 0
   m_Name: PoissonBoss
   m_TagString: Boss
@@ -563,6 +564,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!114 &-4207397299489165807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842863809274163317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4345e528d6aa3624b7d74021f267683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8866992708150954065
 GameObject:
   m_ObjectHideFlags: 0
