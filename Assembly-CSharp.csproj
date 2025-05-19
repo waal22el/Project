@@ -130,6 +130,7 @@
     <Compile Include="Assets/Scripts/Dungeons/TilemapVisulizer.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
     <Compile Include="Assets/Scripts/Dungeons/DungeonGenerator.cs" />
+    <Compile Include="Assets/GameManager.cs" />
     <Compile Include="Assets/TakeDamage.cs" />
     <Compile Include="Assets/Scripts/Dungeons/WallGenerator.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerPickUpItems.cs" />
