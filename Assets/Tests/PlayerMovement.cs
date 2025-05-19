@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     private Vector2 movement = new Vector2(0, 0);
+    private Vector2 animationMovement = new Vector2(0, 0);
+    private bool moving = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
@@ -21,56 +23,30 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update() //Player animation triggers
     {
-        movement.Set(0, 0);
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            animator.SetTrigger("Up");
-            movement.y += 1;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-            animator.SetTrigger("Side");
-            movement.x -= 1;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-            animator.SetTrigger("Side");
-            movement.x += 1;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            animator.SetTrigger("Down");
-            movement.y -= 1;
-        }
 
-
-        if (Input.GetKeyUp(KeyCode.W))
+        if (moving && !animationMovement.Equals(movement))
         {
-            movement.y -= 1;
+            animationMovement = movement;
+            if (movement.y > 0)
+            {
+                animator.SetTrigger("Up");
+            }
+            else if (movement.y < 0)
+            {
+                animator.SetTrigger("Down");
+            }
+            else if (movement.x > 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+                animator.SetTrigger("Side");
+            }
+            else if (movement.x < 0)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+                animator.SetTrigger("Side");
+            }
         }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            movement.x += 1;
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            movement.x -= 1;
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            movement.y += 1;
-        }
-
-        if (movement.Equals(new Vector2(0, 0)))
-        {
-            animator.SetFloat("Speed", 1);
-        }
-        else
-        {
-            animator.SetFloat("Speed", 0);
-        }
+        
     }
 
     void FixedUpdate() //Player velocity
@@ -94,5 +70,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = movement;
+
+        if (movement.Equals(new Vector2(0, 0)))// Idle
+        {
+            moving = false;
+            animator.SetFloat("Speed", 0);
+        }
+        else
+        {
+            moving = true;
+            animator.SetFloat("Speed", 1);
+        }
     }
 }
