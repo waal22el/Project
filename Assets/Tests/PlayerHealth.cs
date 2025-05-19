@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 10;
     public int health;
+    [SerializeField] private GameObject gameOverUI;
 
     public HealthBar healthBar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,10 +21,17 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         Debug.Log($"[PlayerHealth] Health after: {health}");
 
-        if(health <= 0)
+        if (health <= 0)
         {
+            if (gameOverUI != null)
+            {
+                gameOverUI.SetActive(true);
+            }
+
+            
             Debug.Log("[PlayerHealth] Player destroyed!");
             Destroy(gameObject);
+            
         }
     }
 
