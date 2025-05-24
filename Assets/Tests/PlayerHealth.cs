@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {   
         Debug.Log($"[PlayerHealth] Taking {damage} damage. Health before: {health}");
         health -= damage;
+        healthBar.SetHP(health);
         Debug.Log($"[PlayerHealth] Health after: {health}");
 
         if (health <= 0)

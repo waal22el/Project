@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] GameObject health;
+    public GameObject health;
     public int maxHP = 0;
     private int defaultHP = 10;
 
